@@ -1,12 +1,4 @@
 {
-  "name": "appName",
-  "displayName": "testBeto",
-  "expo": {
-    "name": "testBeto",
-    "slug": "testBeto",
-    "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
-  }
+"name": "Test",
+"displayName": "test"
 }

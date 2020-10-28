@@ -14,24 +14,9 @@
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.4.tar.gz",
     "react-native-web": "~0.13.12",
-    "fbjs": "^1.0.0",
-    "drawer": "0.0.2",
-    "expo-font": "~8.3.0",
-    "expo-web-browser": "~8.5.0",
-    "react-navigation": "4.1.1",
-    "react-native-paper": "*3.6.0",
-    "react-native-screens": "~2.10.1",
-    "@react-navigation/web": "~1.0.0-alpha.9",
-    "@react-navigation/core": "3.0.0-alpha.13",
-    "react-navigation-stack": "2.3.7",
-    "@react-navigation/stack": "^5.0.0",
-    "react-native-reanimated": "~1.13.0",
-    "react-navigation-drawer": "^2.4.7",
-    "@react-navigation/drawer": "^5.3.4",
-    "@react-navigation/native": "^5.0.0",
-    "@react-navigation/bottom-tabs": "^5.0.0",
-    "react-native-safe-area-context": "3.1.4",
-    "@react-native-community/masked-view": "0.1.10"
+    "react-native-paper": "3.6.0",
+    "react-navigation": "*",
+    "@react-navigation/native": "^3.8.3"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0"
