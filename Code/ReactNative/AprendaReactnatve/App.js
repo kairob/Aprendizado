@@ -1,13 +1,17 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {View, Text} from 'react-native';
 
-import styles from './src/Styles/index';
-export default function App () {
-  render() ; {
-    return (
-      <View style={styles.container}>
-        <text style={styles.texto}> Consegui ligar o Vs Code </text>
-        <Text style={styles.slogan}> E o emulador do Android</Text>
-      </View>,
-  }
-}
+export default function App1() {
+  return (
+    <View>
+      <View>
+      <Text> Windows do caraca </Text>
+      <Text> Foda</Text>
+      </View>
+        <View>
+      <Text>Aula 1</Text>
+      <Text>Cuuso</Text>
+      </View>
+    </View>
+  );
+};

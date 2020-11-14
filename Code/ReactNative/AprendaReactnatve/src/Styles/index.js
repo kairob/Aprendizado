@@ -5,9 +5,9 @@ const styles = StyleSheet.create({
       flex: 1,
      backgroundColor: "#0066cc",
       alignItems: 'center',
-      justifyContent: 'center',
-      alignItems: 'center'
-    },
+      justifyContent: 'center'
+      
+    }
     texto:{
         color :'#000'
     },
