@@ -1,0 +1,33 @@
+h2 {
+  text-align: center;
+  margin-top: -5;
+
+}
+.body{
+  font-family:'Open Sans';
+}
+.container{
+      width: 260px;
+      height: 260px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+
+}
+.grid{
+  width: 160px;
+  height: 160px;
+  display: flex table-row;
+  flex-flow:wrap-reverse ;
+  align-content: flex-start;
+}
+.celula{
+  width: 75px;
+  height: 65px;
+  margin: 0px;
+  padding: 0px;
+  cursor:pointer;
+  display: flex;
+  border: #000;
+  background-color: cornflowerblue;
+}

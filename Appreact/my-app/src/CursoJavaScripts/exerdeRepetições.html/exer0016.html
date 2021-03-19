@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super Contador</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Vamos Contar</h1>
+
+  </header>
+  <section>
+    <div id="dados">
+      <p>Inicio: <input type="number" name="inicio" id="inicio"></p>
+      <p>Fim <input type="number" name="fim" id="fim"></p>
+      <p>Passo: <input type="number" name="passo" id="passo"></p>
+      <p><input type="button" value="Contador" onclick="contar()"></p>
+
+    </div>
+    <div id="res">Preparando Contagem...</div>
+  </section>
+  <footer>
+    <p>Curso JavaScript</p>
+  </footer>
+  <script>
+    function contar(){
+      let init=window.document.getElementById('inicio')
+      let end = window.document.getElementById('fim')
+      let pass = window.document.getElementById('passo')
+      let res = document.getElementById('res')
+        if(init.value.length === 0 || end.value.length === 0 || pass.value.length === 0 ){
+          res.innerHTML = 'Impossivel contar'
+        }else{
+          res.innerHTML= 'Contando:<br>'
+          let i = Number(init.value)
+          let e = Number(end.value)
+          let p = Number(pass.value)
+          if(p <= 0){
+            window.alert('passo Invalido ! Considerando Passo 1')
+            p=1
+          }
+          if (i < e){
+            //Contagem crescente
+            for(let c = i; c <= e ;c += p){
+            res.innerHTML += `${c}`
+          }
+          
+          
+          }else {
+            for(let c = i; c >= e ;c -= p){
+         
+              res.innerHTML += `${c}`
+            }
+          } 
+        } 
+
+
+    }
+  
+
+
+
+
+  </script>
+
+
+  
+</body>
+</html>
