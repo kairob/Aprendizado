@@ -3,28 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link type="text/css" rel="stylesheet" href="css/style.css"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link type="text/css" rel="stylesheet" href="css/style.css">
-  <title>Treino jogo davelha</title>
+  <title>Jogo da Velha</title> 
 
 </head>
 <body>
-  <div id="container">
+  <div id = "container">
     <h2>Jogo da Velha</h2>
-    <div id = "grid">
-      <div class="celula" id ="0"></div>
-      <div class="celula" id ="1"></div>
-      <div class="celula" id ="2"></div>
-      <div class="celula" id ="3"></div>
-      <div class="celula" id ="4"></div>
-      <div class="celula" id ="5"></div>
-      <div class="celula" id ="6"></div>
-      <div class="celula" id ="7"></div>
-      <div class="celula" id ="8"></div>
-      
+    <div class="grid">
 
+      <div id = "0" class="cell"></div>
+      <div id = "1" class="cell"></div>
+      <div id = "2" class="cell"></div>
+      <div id = "3" class="cell"></div>
+      <div id = "4" class="cell"></div>
+      <div id = "5" class="cell"></div>
+      <div id = "6" class="cell"></div>
+      <div id = "7" class="cell"></div>
+      <div id = "8" class="cell"></div>
 
     </div>
   </div>
+  <script>
+    const cells = document.querySelectorAll(".cell");
+    let checarTurno = true;
+    const JogadorX = "X"
+    const JogadorO = "O";
+    const Combinaçoes = [
+      [0,1,2],
+      [3,4,5],
+      [6,7,8],
+      [0,3,6],
+      [1,4,7],
+      [2,5,8],
+      [0,4,8],
+      [2,4,6]
+
+    ]
+
+    document.addEventListener("click" , (event)=> {
+      if(event.target.matches(".cell")){
+        jogar(event.target.id)
+      }
+      
+    })
+    function jogar(id){
+      const cell = document.getElementById(id)
+      const turno = checarTurno ? JogadorX : JogadorO
+      cell.textContent= turno;
+      cell.classList.add(turno)
+      checarTurno= !checarTurno      
+      checarVencedor= turno
+    }
+    function checarVencedor(turno){
+      const Vencedor = Combinaçoes.some((comb)=>{
+        return comb.every((index)=>{
+          return cells [index].classList.contains(turno)
+        })
+      })
+      if(Vencedor){
+        encerrarjogo(turno)
+      }else if (checarEmpate){
+        encerrarjogo()
+      }else {
+        
+      }
+    }
+    
+
+   </script>
 </body>
 </html>
