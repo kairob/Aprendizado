@@ -1,31 +1,22 @@
-import React, { useState } from 'react'
+import React,{}  from 'react'
 import './App.css';
 
-function App() {
-  const emptBoard= Array(9).fill("")
-  const [board, setBoard] = useState(emptBoard)
-  function handleCellClick(index){
-    setBoard(board.map((item, itemIndex)=> itemIndex === index ? "X" : item))
-  } 
-  console.log(handleCellClick)
+function App() { 
 
   return (
-    <main>
-      <h1 className="title">Jogo da Velha</h1>
-      <div className="board">
-        {
-          board.map((item, index)=>{
-            return(
-              <div key={index} className={`cell ${item}`}
-                onClick= {()=> setBoard(board.map((item, itemIndex)=> itemIndex === index ? "X" : item))}
-              >
-                {item}
-              </div>
-            )
-          })
-        }
+    <main class = "main">
+      <section id="Cabeçalho">
+        <div id = "logo"></div>
+        <div id= "name">TERMO DE CONSTATAÇÃO</div>
+        <div id = "number">NÚMERO</div>
+      </section>
+      <section id="unidDest">
+        <div id = "Dest">UNIDADE(ONDE FOI CONSTATADA A IRREGULARIDADE)</div>
+        <div id= "dr">DR</div>
+        <div id = "sto">CÓDIGO STO</div>
+      </section>
 
-      </div>
+      
     </main>
     
   );

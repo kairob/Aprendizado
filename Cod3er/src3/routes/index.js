@@ -1,0 +1,12 @@
+import React from 'react';
+import MyDrawer from './Drawer.routes';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+
+export default function Routes() {
+  return (
+    <NavigationContainer>
+      <MyDrawer />
+    </NavigationContainer>
+  );
+}
