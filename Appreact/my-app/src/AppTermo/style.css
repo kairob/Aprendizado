@@ -18,11 +18,12 @@
 }
 /*Pimeira linha*/
 #logo{
-  width: 35%;  
-  height: 54px;
+  width: 30%;  
+  height: 14px;
+  margin: 0pt;
 }
 #name{
-  width: 40%;
+  width: 45%;
   border:1px solid #000;
   font-size: 19pt;
   font: 10  sans-serif;
@@ -36,6 +37,7 @@
   border:1px solid #000;
   margin-left: 10px;
   font-size: 8pt;
+  
 
 }
 #divNumber{
@@ -43,12 +45,28 @@
   flex-flow: row;
   margin-top: 10px;
 }
-#InputNumb{
-  width: 70px;
+.InputNumb{
+  position: relative;
+  margin: 0px;
+  height: 23px;
+  font-size: large;
+  width: 110px;
+  
+  border:1px solid #000;
+
   
 }
-#inputNumber{
-  width: 180px;
+.inputNumber{
+  position: relative;
+  margin-bottom: 0px;
+  height: 23px;
+  font-size: large;
+  width: 145px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  font-style: normal ;
+  border:1px solid #000;
 }
 /*Segunda linha*/
 #unidDest{
@@ -57,10 +75,14 @@
   margin-top: 5pt;
   
 }
-#Dest{
+.Dest{
   width: 60%;
   height: 22px;
-  border:1px solid #000;
+  border-left:1px solid #000;
+  border-top:1px solid #000;
+  border-right:1px solid rgb(112, 104, 104);
+
+
   font-size: 10pt;
   justify-content: center;
   align-items: center;
@@ -68,30 +90,98 @@
 
 
 }
-#dr{
+.dr{
   width: 15%;
   height: 22px;
-  border:1px solid #000;
+  border-left:1px solid rgb(128, 117, 117);
+  border-top:1px solid #000;
+  border-right:1px solid rgb(131, 123, 123);
+
   font-size: 10pt;
   justify-content: center;
   align-items: center;
   align-content: center;
 
 }
-#sto{
+.sto{
   width: 35%;
   height: 22px;
-  border:1px solid #000;
+  border-left:1px solid rgb(153, 146, 146);
+  border-top:1px solid #000;
+  border-right:1px solid #000;
+  border-top:1px solid #000;
   font-size: 10pt;
   justify-content: center;
   align-items: center;
   align-content: center;
 }
+
 #unidDest1{
+  display: flex;
+  flex-flow: row;  
+  height: 35px;
+}
+.InputUniDest{
+  height:25px ;
+  width: 578px;
+  font-size: 12PT;
+}
+.inputdr{
+  height: 25px;
+  width: 141px;
+  font-size: 12pt;
+}
+.inputsto{
+  height: 25px;
+  width: 335px;
+}
+/*quarta linha*/
+#post{
+  border-left:1px solid #000;
+  border-top:1px solid #000;
+  border-right:1px solid rgb(112, 104, 104);
+  height: 20px;
+  width: 500px;
+  margin-right: 5px;
+
+
+}
+#objeto{
+  border-left:1px solid rgb(128, 117, 117);
+  border-top:1px solid #000;
+  border-right:1px solid rgb(131, 123, 123);
+  height: 20px;
+  width: 200px;
+  margin-right: 5px;
+
+}
+#peso{
+  border-left:1px solid rgb(153, 146, 146);
+  border-top:1px solid #000;
+  border-right:1px solid #000;
+  border-top:1px solid #000;
+  height: 20px;
+  width: 500px;
+  margin-right: 0px;
+
+}
+/*quinta linha*/
+#unidPost{
   display: flex;
   flex-flow: row;
 }
+#InputUniPost{
+  margin-right: 5px;
+  height: 25px;
+  width: 500px;
 
+}
+#inputObjet{
+  margin-right: 5px;
+}
+#inputPeso{
+
+}
 
 #blText1{
   padding-left: 10px;

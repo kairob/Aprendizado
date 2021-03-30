@@ -1,31 +1,39 @@
-import React,{}  from 'react'
-import './App.css';
-
-function App() { 
-
-  return (
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  
     <main class = "main">
-      <section id="cabeçalho">        
-        <div id = "logo" ><input src="image/logoCorreios.jpg" alt="logo" ></img></div>
-        <div id= "name" value=""><strong>TERMO DE CONSTATAÇÃO</strong></div>
+      <section id="cabeçalho">   
+             
+        <div id = "logo" ><img src="image/logoCorreios.jpg" alt="logo" height="70" width="360" ></img></div>
+        <div id= "name"><strong>TERMO DE CONSTATAÇÃO</strong></div>
         <div id = "number">
           NÚMERO
             <div id = "divNumber">
-            <div class = "InputNumb"><input type="placerouder"></input></div>
-            <div class = "inputNumber"><input type="placerouder"></input> </div>
+            <div><input class = "InputNumb" size="16"type="text"></input></div>
+            <div ><input class = "inputNumber" type="text" placeholder="aaaa"></input> </div>
               
             </div>
         </div>
       </section>
       <section id="unidDest">
-        <div id = "Dest">UNIDADE(ONDE FOI CONSTATADA A IRREGULARIDADE)</div>
-        <div id= "dr">DR</div>
-        <div id = "sto">CÓDIGO STO</div>
+        <div class = "Dest">UNIDADE(ONDE FOI CONSTATADA A IRREGULARIDADE)</div>
+        <div class= "dr">DR</div>
+        <div  class= "sto">CÓDIGO STO</div>
       </section>
-      <section id="unidDest1">
-        <div id = "InputUniDest"><input type="placerouder"></input></div>
-        <div id= "inputdr"><input type="placerouder"></input> </div>
-        <div id = "inputsto"><input type="placerouder"></input></div>
+      <section >
+        <form id="unidDest1">
+        <div  ><input class = "InputUniDest" type="text"></input></div>
+        <div ><input class= "inputdr"type="text"></input> </div>
+        <div ><input class = "inputsto" type="text"></input></div>
+      </form>
       </section>
       <section id="unidDest">
         <div id = "post">UNIDADE DE POSTAGEM</div>
@@ -33,24 +41,24 @@ function App() {
         <div id = "peso">PESO</div>
       </section>
       <section id="unidPost">
-        <div id = "InputUniPost"><input type="placerouder"></input></div>
-        <div id= "inputObjet"><input type="placerouder"></input> </div>
-        <div id = "inputPeso"><input type="placerouder"></input></div>
+        <div ><input id = "InputUniPost" type="text"></input></div>
+        <div ><input id= "inputObjet" type="text"></input> </div>
+        <div id = "inputPeso"><input type="text"></input></div>
       </section>
       <section id="dadosImag">
       <section id="dadosRem">
         <div id = "rem">NOME DO REMETENTE</div>
-        <div id = "InputRem"><input type="placerouder"></input></div>        
+        <div id = "InputRem"><input type="text"></input></div>        
         <div id = "EndRem"> ENDEREÇO DO REMETENTE</div>
-        <div id = "InputEndRem"><input type="placerouder"></input></div>
-        <div id = "InputCEPRem"><input type="placerouder"></input></div>
+        <div id = "InputEndRem"><input type="text"></input></div>
+        <div id = "InputCEPRem"><input type="text"></input></div>
       </section>
       <section>
         <div id = "dest">NOME DO DESTINATARIO</div>
-        <div id = "InputDest"><input type="placerouder"></input></div>        
+        <div id = "InputDest"><input type="text"></input></div>        
         <div id = "EndDest"> ENDEREÇO DO DESTINATARIO</div>
-        <div id = "InputEndDest"><input type="placerouder"></input></div>
-        <div id = "InputCEPDest"><input type="placerouder"></input></div>      
+        <div id = "InputEndDest"><input type="text"></input></div>
+        <div id = "InputCEPDest"><input type="text"></input></div>      
       </section>
         <div></div>
       </section>
@@ -84,9 +92,9 @@ function App() {
         <div id ="confer1">ASSINATURA</div>
       </section >
       <section>
-        <div id = "confer1"><input type="placerouder"></input></div>
-        <div id= "confer2"><input type="placerouder"></input> </div>
-        <div id = "confer1"><input type="placerouder"></input></div>
+        <div id = "confer1"><input type="text"></input></div>
+        <div id= "confer2"><input type="text"></input> </div>
+        <div id = "confer1"><input type="text"></input></div>
       </section>
       <section id="confer">
       <div id ="confer1">CONFERENTES/TESTEMUNHAS</div>
@@ -94,9 +102,9 @@ function App() {
         <div id ="confer1">ASSINATURA</div>
       </section >
       <section>
-        <div id = "confer1"><input type="placerouder"></input></div>
-        <div id= "confer2"><input type="placerouder"></input> </div>
-        <div id = "confer1"><input type="placerouder"></input></div>
+        <div id = "confer1"><input type="text"></input></div>
+        <div id= "confer2"><input type="text"></input> </div>
+        <div id = "confer1"><input type="text"></input></div>
       </section>
       
       <section id="confer">
@@ -105,9 +113,9 @@ function App() {
         <div id ="confer1">ASSINATURA</div>
       </section >
       <section>
-        <div id = "confer1"><input type="placerouder"></input></div>
-        <div id= "confer2"><input type="placerouder"></input> </div>
-        <div id = "confer1"><input type="placerouder"></input></div>
+        <div id = "confer1"><input type="text"></input></div>
+        <div id= "confer2"><input type="text"></input> </div>
+        <div id = "confer1"><input type="text"></input></div>
       </section>
       <section id="DECLAR">
         <div ><strong>DECLARAÇÃO DO DESTINATARIO OU REMETENTE</strong>
@@ -136,10 +144,9 @@ function App() {
         <div id = "b5">DATA</div>
         <div id = "b6"></div>   
        </section>     
-    </main>
+      </main>
     
-    
-  );
-}
-
-export default App;
+  
+  
+</body>
+</html>
