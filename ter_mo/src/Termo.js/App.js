@@ -1,12 +1,12 @@
+import './componets/header'
+import './componets/styles.css';
 
-import './styles.css';
-
-function App() {
-  return (
-    
+export default function App() {  
+  return (    
     <main class = "main">
       <section class="container">
-        <div class="header">
+      <section class="container">
+        <span class="header">
           <div class="logo">
             <img class="imglogo" alt="logo"></img>
           </div>
@@ -19,24 +19,24 @@ function App() {
             </div>
             <form class ="formTerm"name="formTerm">
               <input class = "InputNumb" size="16"type="text"maxlength="5"></input>
-              <p6>/</p6>
+              <label>/</label>
               <input class = "inputNumber" type="text" placeholder="aaaa"maxlength="4"></input>
             </form>
           </div>
-        </div>
+        </span>
         <form class="unid"action="" method="post">
           <label class="uniPost">
             Unidade:&nbsp;&nbsp;
           </label>
           <input 
-            class="inpUnid"
+            class="inpUnid2"
             type="text" 
             placeholder="ONDE FOI CONSTATADA A IRREGULARIDADE"
-            maxlength="43"
+            maxlength="38"
             >
           </input>
             &nbsp;&nbsp;&nbsp;&nbsp;
-          <input class="inpDr" type="text" placeholder="DR"maxlength="4"></input>
+          <input class="inpDr1" type="text" placeholder="DR"maxlength="4"></input>
             &nbsp;&nbsp;&nbsp;&nbsp;
           <input class="inpSTO" type="text" placeholder="C&Oacute;DIGO STO"maxlength="9"></input>
         </form>
@@ -45,11 +45,11 @@ function App() {
             Unidade de Postagem:
           </label>
             &nbsp;
-          <input class="inpUnid"type="text" maxlength="44"></input>
+          <input class="inpUnidPost"type="text" maxlength="38"></input>
             &nbsp;
-          <input class="inpSTO" type="text" placeholder="N&Uacute;MERO DO OBJETO"maxlength="12"></input>  
+          <input class="inpObj" type="text" placeholder="N&Uacute;MERO DO OBJETO"maxlength="10"></input>  
             &nbsp;
-          <input class="inpDr" type="text" placeholder="PESO"maxlength="7"></input>
+          <input class="inputPeso" type="text" placeholder="PESO"maxlength="7"></input>
         </form>
         <div class="DadosRemDestbox">
           <div class="RemDestbox">
@@ -58,10 +58,10 @@ function App() {
                 <br></br>&nbsp;
               <input class="inpCep" type="text" maxlength="9" placeholder="CEP"></input>&nbsp;
               
-              <input class="inpUnid1" type="text" maxlength="32" placeholder="NOME"></input>
+              <input class="inpUnid" type="text" maxlength="26" placeholder="NOME"></input>
                 <br></br>&nbsp;
               
-              <input class="endRD" type="text" maxlength="34" placeholder="ENDERE&Ccedil;O DO REMETENTE">
+              <input class="endRD" type="text" maxlength="31" placeholder="ENDERE&Ccedil;O DO REMETENTE">
 
               </input>&nbsp;&nbsp;
                 
@@ -74,10 +74,10 @@ function App() {
                 <br></br>&nbsp;
               <input class="inpCep" type="text" maxlength="9" placeholder="CEP"></input>&nbsp;
               
-              <input class="inpUnid1" type="text" maxlength="32" placeholder="NOME"></input>
+              <input class="inpUnid" type="text" maxlength="26" placeholder="NOME"></input>
                 <br></br>&nbsp;
               
-              <input class="endRD" type="text" maxlength="34" placeholder="ENDERE&Ccedil;O DO REMETENTE">
+              <input class="endRD" type="text" maxlength="31" placeholder="ENDERE&Ccedil;O DO DESTINAT&Aacute;RIO">
 
               </input>&nbsp;&nbsp;
                 
@@ -86,23 +86,17 @@ function App() {
               </input>
             </form>
             <form class="formFile" action="/arquivos.php" method="post">
-              <label class="labelFile" For="file">
+              <label class="labelFile" htmlFor="file">
                 Selecionar arquivo
               </label>
               <input class="inputFile"type="file"id ="file" name="file"></input>
-              <input class="submit"type="submit"name="enviar"></input>
+              <input class="submit"type="submit"name="enviar" value="Enviar"></input>
               
             </form> 
             </div>
           <map>
           </map>     
-        </div>
-
-            
-
-          
-
-        
+        </div>                        
         <div class="anormCarimbo">
         <form class="FormCar" >
           &nbsp;&nbsp;&nbsp;
@@ -118,12 +112,11 @@ function App() {
             <label>
               Etiqueta de registro danificada/Extraviada;
             </label>
-
           </div>
           <div>
             <input class="cxText" type="checkbox"></input>
             <label>
-              Falta Endereço de Destino/Remetente/Danificado;
+              Falta Endere&ccedil;o de Destino/Remetente/Danificado;
             </label>
           </div>
           <div>
@@ -154,7 +147,7 @@ function App() {
           <div>
             <input class="cxText" type="checkbox"></input>
             <label>
-              Embalagem intacta, por&eacute;m com o conteúdo Quebrado/Vazando;
+              Embalagem intacta, por&eacute;m com o Conte&uacute;do Quebrado/Vazando;
             </label>
           </div>
           <div>
@@ -162,22 +155,23 @@ function App() {
             <label>
               Quantidade de itens no inv&oacute;lucro&nbsp;?&nbsp;:
             </label>
-            <input class="itens" type="number"placeholder="total"min="0"></input>
+            <input class="itens" type="number"placeholder="total"min="0"id="txIten"value="0"></input>
             <label>
               ,e a Quantidade de itens avariados/danificados
               &nbsp;?&nbsp;:&nbsp;&nbsp;
             </label>
-            <input class="itens" type="number"placeholder="total"min="0"></input>            
-            <label>
-              &nbsp;&nbsp;{} % dos itens est&atilde;o avariados ou danificados&nbsp;
-            </label>
+            <input class="itens" type="number"placeholder="total"min="0"id="txIten1"value="0"></input> &nbsp;&nbsp;
+            <input class="submit1"type="button" onclick="calculate()" value ="Calcular"></input>      
+            
+                <div id="res">Resultado</div>
+            
           </div>
           <div>
             <input class="cxText" type="checkbox"></input>
             <label>
               Observa&ccedil;&otilde;es complementares:&nbsp;&nbsp;&nbsp;
             </label>
-            <input class="Obs" type="text"></input>
+            <input class="Obs" type="text"maxlength="41"></input>
             
           </div>
         </form>
@@ -190,9 +184,13 @@ function App() {
           <div class ="blText">
           <div>
             <input class="cxText" type="checkbox"></input>
-            <label>Devolvido a unidade de postagem&nbsp;</label>
-            <input class = "bltext1" type="text" maxlength="41"></input>
-            <label>em&nbsp;</label> 
+            <label>
+              Devolvido a unidade de postagem&nbsp;
+            </label>
+            <input class = "bltext1" type="text" maxlength="31"></input>
+            <label>
+              em&nbsp;
+            </label> 
             <input class = "bltext2"type="date"></input>
             </div>
           <div>
@@ -201,55 +199,84 @@ function App() {
             <input class = "bltext4" type="number"></input>
             <label>/</label>
             <input class = "bltext3"type="text"></input>
-            <label>, lavrado em:&nbsp;</label>
+            <label>
+              , lavrado em:&nbsp;
+            </label>
             <input class = "bltext2"type="date"></input></div>
           <div>
             <input class="cxText" type="checkbox"></input>
-            <label>Destruído. Emitido o Termo de Destruição nº&nbsp;</label>
+            <label>
+              Destruído. Emitido o Termo de Destruição nº&nbsp;
+            </label>
             <input class = "bltext3" type="text"></input>
-            <label>&nbsp;/&nbsp;</label>
+            <label>
+              &nbsp;/&nbsp;
+            </label>
             <input class = "bltext3"type="text"></input>
-            <label>&nbsp;,conforme anexo, dado a inviabilidade de reintegrar ao tráfego postal;&nbsp;</label>
+            <label>
+              &nbsp;
+              ,conforme anexo, dado a inviabilidade de reintegrar
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              ao tráfego postal;
+              &nbsp;
+            </label>
           </div>   
           <div>
             <input class="cxText" type="checkbox"></input>
-            <label>Encaminhado à GINSP&nbsp;</label>
-            <input class = "bltext3" type="text"></input>
-            <label>&nbsp;face&nbsp;</label>
-            <input class = "bltext6"type="text"></input>
+            <label>
+              Encaminhado à GINSP&nbsp;
+            </label>
+            <input class = "bltext3" type="text"maxlength="4"></input>
+            <label>
+              &nbsp;face&nbsp;
+            </label>
+            <input class = "bltext6"type="text"maxlength="51"></input>
           </div>  
           <div>
             <input class="cxText" type="checkbox"></input>
-            <label>Outros (especificar):&nbsp;</label>
-            <input class = "bltext6" type="text"></input>
+            <label>
+              Outros (especificar):&nbsp;
+            </label>
+            <input class = "bltext6" type="text"maxlength="51"></input>
           </div>     
           </div>
       </section>
       <section >
-        <div class ="confer1">&nbsp;&nbsp;<strong>CONFERENTES/TESTEMUNHAS</strong></div>
+        <div class ="confer1">&nbsp;&nbsp;
+          <strong>
+            CONFERENTES/TESTEMUNHAS
+          </strong>
+        </div>
         <div class="confer">
           <form class="boxMat">
-            <div><input class="inputConfer" maxlength="27" placeholder="NOME"></input></div>
-            <div><input class="inputConferMat" maxlength="11" placeholder="MATRICULA"></input></div>
-            <div >
-              <input class="boxass" value="ass:"></input>
-            </div>
-          </form>
-          <form class="boxMat">
             <div>
-              <input class="inputConfer" maxlength="27" placeholder="NOME"></input>
+              <input class="inputConfer" maxlength="24" placeholder="NOME"></input>
             </div>
             <div>
               <input class="inputConferMat" maxlength="11" placeholder="MATRICULA"></input></div>
-            <div >
-              <input class="boxass" value="ass:"></input>
+              <div class="boxass">  
+              <label htmlFor="">ass:</label>          
             </div>
           </form>
           <form class="boxMat">
-            <div><input class="inputConfer" maxlength="27" placeholder="NOME"></input></div>
-            <div><input class="inputConferMat" maxlength="11" placeholder="MATRICULA"></input></div>
-            <div >
-              <input class="boxass" placeholder="ass:"value="ass:"></input>
+            <div>
+              <input class="inputConfer" maxlength="24" placeholder="NOME"></input>
+            </div>
+            <div>
+              <input class="inputConferMat" maxlength="11" placeholder="MATRICULA"></input></div>
+            <div class="boxass">  
+              <label htmlFor="">ass:</label>          
+            </div>
+          </form>
+          <form class="boxMat">
+            <div>
+              <input class="inputConfer" maxlength="24" placeholder="NOME"></input>
+            </div>
+            <div>
+              <input class="inputConferMat" maxlength="11" placeholder="MATRICULA"></input>
+            </div>
+            <div class="boxass">  
+              <label htmlFor="">ass:</label>          
             </div>
           </form>
                 
@@ -259,7 +286,7 @@ function App() {
       <section class="declar">
         <div >
           <strong>&nbsp;&nbsp;DECLARAÇÃO DO DESTINAT&Aacute;RIO OU REMETENTE</strong>
-          <div>
+        <div>
             <input class="cxText" type="checkbox"></input>
               <label>
                 Aceito o objeto  <strong>sem</strong> contestação;
@@ -312,6 +339,7 @@ function App() {
         
         
       </section>
+      </section>
 
     </main>
     
@@ -319,4 +347,4 @@ function App() {
 }
   
       
-export default App;
+
