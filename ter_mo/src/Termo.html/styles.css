@@ -324,6 +324,25 @@
   border-color: #FFF;
 
 }
+.calc{
+  background-color: #000;
+  color: #FFF;
+  height: 50%;
+  width: 12%;
+  border: 1px solid #0a0;
+  border-radius: 8%;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  
+}
+#res{
+  margin-left: 6%;
+  font-size: 120%;
+  font-weight: bold;
+  margin-bottom: 1%;
+ 
+}
 
   
 
