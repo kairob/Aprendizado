@@ -63,7 +63,7 @@
                 <br></br>&nbsp;
               <input class="inpCep" type="text" maxlength="9" placeholder="CEP"></input>&nbsp;
               
-              <input class="inpUnid" type="text" maxlength="26" placeholder="NOME"></input>
+              <input class="inpUnid" type="text" maxlength="26" placeholder="NOME">
                 <br></br>&nbsp;
               
               <input class="endRD" type="text" maxlength="31" placeholder="ENDERE&Ccedil;O DO REMETENTE">
@@ -91,108 +91,96 @@
               </input>
             </form>
             <form class="formFile" action="/arquivos.php" method="post">
-              <label  >
-                  Selecionar arquivo
-              </label>
-              <input class="inputFile"type="file"id ="file" name="file"></input>
-              <input class="submit"type="submit"name="enviar" value="Enviar"></input>
               
+              <input class="inputFile"type="file"id ="file" name="file"/>
+              <input class="submit1" type="file" id="myfile" name="myfile">&nbsp;&nbsp;&nbsp;
+                           
             </form> 
             </div>
           <map>
           </map>     
-        </div>                        
+        </div>
         <div class="anormCarimbo">
-        <form class="FormCar" >
-          &nbsp;&nbsp;&nbsp;
-          <strong>ANORMALIDADES CONSTATADAS</strong>
-          <div>
-            <input class="cxText" type="checkbox"></input>
-            <label>
-              Embalagem molhada/Rasgada/totalmente/parcialmente;                
-            </label>
-          </div>
-          <div>
-            <input class="cxText" type="checkbox"></input>
-            <label>
-              Etiqueta de registro danificada/Extraviada;
-            </label>
-          </div>
-          <div>
-            <input class="cxText" type="checkbox"></input>
-            <label>
-              Falta Endere&ccedil;o de Destino/Remetente/Danificado;
-            </label>
-          </div>
-          <div>
-            <input class="cxText" type="checkbox"></input>
-            <label> 
-              Embalagem dilacerada e com mostra do conte&uacute;do avariado/vazando;
-            </label>
-          </div>
-          <div>
-            <input class="cxText" type="checkbox"></input>
-            <label>
-              Embalagem intacta, por&eacute;m sem o conteúdo;
-            </label>
-            
+          <form class="anorm">                        
+            <div  class="Aconst">
+              <label ><strong>ANORMALIDADES CONSTATADAS</strong></label>                            
+              <div>  
+                <input class="cxText" type="checkbox">
+                  <label>
+                    Embalagem molhada/Rasgada/totalmente/parcialmente;<br>
+                  </label>
+                </input> 
+                <input class="cxText" type="checkbox">
+                  <label>
+                    Etiqueta de registro danificada/Extraviada;<br>
+                  </label>
+                </input>
+                <input class="cxText" type="checkbox">
+                  <label>
+                    Falta Endere&ccedil;o de Destino/Remetente/Danificado;<br>
+                  </label>
+                </input>
+                <input class="cxText" type="checkbox">
+                  <label> 
+                    Embalagem intacta, por&eacute;m sem o conteúdo;<br>
+                  </label>
+                </input>
+                <input class="cxText" type="checkbox">
+                  <label>
+                    Conte&uacute;do Avariado/Quebrado/Vazando;<br>
+                  </label>
+                </input>
+                <input class="cxText" type="checkbox">
+                  <label>
+                    Embalagem dilacerada;<br>
+                  </label>
+                </input>
+                <input class="cxText" type="checkbox">
+                  <label>
+                    Embalagem intacta, por&eacute;m com o Conte&uacute;do Quebrado/Vazando;<br>
+                  </label>
+                </input>
+              </div>         
+              
+              <div>
+                <input class="cxText" type="checkbox">
+                <label>
+                  Quantidade de itens no inv&oacute;lucro&nbsp;?&nbsp;:
+                </label>
+                <input class="itens" type="text"placeholder="total"min="0"id="txIten"value="2"></input>
+                <label>
+                  ,e a Quantidade de itens avariados/danificados
+                  &nbsp;?&nbsp;:&nbsp;&nbsp;
+                </label>
+                <input class="itens" type="text"placeholder="total"min="0"id="txIten1"value="1"></input> &nbsp;&nbsp;
+                <button class="calc" type="button" onclick="calculate()"name="Calcular" >Resultado</button>  
+                
+                    <label id="res"><label>
+                
+              </div>
+              <div>
+                <input class="cxText" type="checkbox"/>
+                <label>
+                  Observa&ccedil;&otilde;es complementares:&nbsp;&nbsp;&nbsp;
+                </label>
+                <input class="Obs" type="text"maxlength="41"/>
+                
+              </div>
             </div>
-          <div>
-            <input class="cxText" type="checkbox"></input>
-            <label>
-              Conte&uacute;do Avariado/Quebrado/Vazando
-            </label>
-          </div>
-          <div>
-            <input class="cxText" type="checkbox"></input>
-            <label>
-              Embalagem dilacerada;
-            </label>
-          </div>
-          <div>
-            <input class="cxText" type="checkbox"></input>
-            <label>
-              Embalagem intacta, por&eacute;m com o Conte&uacute;do Quebrado/Vazando;
-            </label>
-          </div>
-          <div>
-            <input class="cxText" type="checkbox"></input>
-            <label>
-              Quantidade de itens no inv&oacute;lucro&nbsp;?&nbsp;:
-            </label>
-            <input class="itens" type="text"placeholder="total"min="0"id="txIten"value="2"></input>
-            <label>
-              ,e a Quantidade de itens avariados/danificados
-              &nbsp;?&nbsp;:&nbsp;&nbsp;
-            </label>
-            <input class="itens" type="text"placeholder="total"min="0"id="txIten1"value="1"></input> &nbsp;&nbsp;
-            <button class="calc" type="button" onclick="calculate()"name="Calcular" >Calcular</button><br></br>    
-            
-                <label id="res">Resultado<label>
-            
-          </div>
-          <div>
-            <input class="cxText" type="checkbox"></input>
-            <label>
-              Observa&ccedil;&otilde;es complementares:&nbsp;&nbsp;&nbsp;
-            </label>
-            <input class="Obs" type="text"maxlength="41"></input>
-            
-          </div>
-        </form>
-        <div class ="fontcar"><strong>CARIMBO</strong></div>
+          </form>
+          <div class ="fontcar"><strong>CARIMBO</strong></div>
         </div>
       <section class="encTotal">
-          <div class="encPost"><input class="cxText" type="checkbox"></input>
+          <div class="encPost"><input class="cxText" type="checkbox"/>
             <label>Encaminhado ao destino</label>
           </div>
           <div class ="blText">
           <div>
-            <input class="cxText" type="checkbox"></input>
+            <input class="cxText" type="checkbox"/>
             <label>
               Devolvido a unidade de postagem&nbsp;
             </label>
-            <input class = "bltext1" type="text" maxlength="31"></input>
+            <input class = "bltext1" type="text" maxlength="31"/>
             <label>
               em&nbsp;
             </label> 
@@ -203,21 +191,22 @@
             <label>Auto de Irregularidade de n&ordm;&nbsp;</label>
             <input class = "bltext4" type="number"></input>
             <label>/</label>
-            <input class = "bltext3"type="text"></input>
+            <input class = "bltext3"type="text">
             <label>
               , lavrado em:&nbsp;
             </label>
-            <input class = "bltext2"type="date"></input></div>
+            <input class = "bltext2"type="date">
+          </div>
           <div>
-            <input class="cxText" type="checkbox"></input>
+            <input class="cxText" type="checkbox">
             <label>
               Destruído. Emitido o Termo de Destruição n&ordm;&nbsp;
             </label>
-            <input class = "bltext3" type="text"></input>
+            <input class = "bltext3" type="text">
             <label>
               &nbsp;/&nbsp;
             </label>
-            <input class = "bltext3"type="text"></input>
+            <input class = "bltext3"type="text">
             <label>
               
               , conforme anexo, dado a inviabilidade de reintegrar              
@@ -289,34 +278,42 @@
      
       <section class="declar">
         <div >
-          <strong>&nbsp;&nbsp;DECLARAÇÃO DO DESTINAT&Aacute;RIO OU REMETENTE</strong>
-        <div>
-            <input class="cxText" type="checkbox"></input>
-              <label>
-                Aceito o objeto  <strong>sem</strong> contestação;
-              </label>
-            </div>
-          <div>
-            <input class="cxText" type="checkbox"></input>
-              <label> 
-                Aceito o objeto com contesta&ccedil;&atilde;o, conforme ressalva à parte;&nbsp;
-              </label>
-            <input class = "bltext7" type="text"></input>
-            </div>
-          <div>
-            <input class="cxText" type="checkbox"></input>
-             <label>
-               Recuso o objeto, face&nbsp;
-              </label> 
-            <input class = "bltext8" type="text"></input>
-          </div>
-          <div>
-            <input class="cxText" type="checkbox"></input>
-              <label>
-                Outros (especificar):&nbsp;
-              </label> 
-            <input class = "bltext9" type="text"></input>
-          </div>
+          <label>
+            <strong>&nbsp;&nbsp;
+              DECLARAÇÃO DO DESTINAT&Aacute;RIO OU REMETENTE
+            </strong>
+          </label>
+          <span>
+            <div class="checkCliente"></div>
+            <label>
+              Aceito o objeto  <strong>sem</strong> contestação;
+            </label>
+            
+          </span>
+          <span>
+            <div class="checkCliente"></div>
+            <label >
+              Aceito o objeto <strong>com</strong>
+              contesta&ccedil;&atilde;o, conforme ressalva à parte;              
+            </label>
+            <div class="boxRessalvas1"></div>
+            
+          </span>
+          <span>
+            <div class="checkCliente"></div>
+            <label>
+              Recuso o objeto, face&nbsp;
+            </label>
+            <div class="boxRessalvas"></div>
+          </span>
+          <span>
+            <div class="checkCliente"></div>
+            <label>
+              Outros (especificar):&nbsp;
+            </label>
+            <div class="boxRessalvas"></div>
+          </span>
+          
           
         </div> 
       </section>      

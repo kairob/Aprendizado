@@ -12,7 +12,7 @@
     <main class = "main">
       <section id="cabeçalho">   
              
-        <div id = "logo" ><img src="image/logoCorreios.jpg" alt="logo" height="70" width="360" ></img></div>
+        <div id = "logo" ><img src="image/logoCorreios.jpg" alt="logo" height="70" width="300" ></img></div>
         <div id= "name"><strong>TERMO DE CONSTATAÇÃO</strong></div>
         <div id = "number">
           NÚMERO
@@ -43,24 +43,27 @@
       <section id="unidPost">
         <div ><input id = "InputUniPost" type="text"></input></div>
         <div ><input id= "inputObjet" type="text"></input> </div>
-        <div id = "inputPeso"><input type="text"></input></div>
+        <div ><input id = "inputPeso"type="text"></input></div>
       </section>
       <section id="dadosImag">
-      <section id="dadosRem">
-        <div id = "rem">NOME DO REMETENTE</div>
-        <div id = "InputRem"><input type="text"></input></div>        
-        <div id = "EndRem"> ENDEREÇO DO REMETENTE</div>
-        <div id = "InputEndRem"><input type="text"></input></div>
-        <div id = "InputCEPRem"><input type="text"></input></div>
-      </section>
-      <section>
-        <div id = "dest">NOME DO DESTINATARIO</div>
-        <div id = "InputDest"><input type="text"></input></div>        
-        <div id = "EndDest"> ENDEREÇO DO DESTINATARIO</div>
-        <div id = "InputEndDest"><input type="text"></input></div>
-        <div id = "InputCEPDest"><input type="text"></input></div>      
-      </section>
-        <div></div>
+        <section id="dadosRem">
+          <div id = "rem">
+            NOME DO REMETENTE
+            <div ><input id = "InputRem" type="text"></input></div>        
+            <div > ENDEREÇO DO REMETENTE <input id = "EndRem"type="text" placeholder="xxxxxxx" pattern="[]{7}">
+            <div ><input id = "InputEndRem"type="text"></input></div>
+            
+          </div>
+        </section>
+        <section>
+          <div id = "dest">NOME DO DESTINATARIO</div>
+          <div ><input id = "InputDest"type="text"></input></div>        
+          <div > ENDEREÇO DO DESTINATARIO <input id = "EndDest"type="text" placeholder="xxxxxxx" pattern="[]{7}">
+          <div ><input id = "InputEndDest"type="text"></input></div>
+          
+          </div>    
+        </section>
+          <div></div>
       </section>
       <section id="anormCarimbo">
         <div ><strong>ANORMALIDADES CONSTATADAS</strong>
