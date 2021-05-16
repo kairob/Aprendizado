@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Bandeiras</title>
+</head>
+<body>
+ 
+  <div class="notprint" >
+    <input type="button" value="Imprimir" onclick="print()" >
+    <input type="button" value="Adicionar" id="btn-Bandeira" >
+    
+  </div>         
+       
+  <div class="bandeira" >
+    <span class="head" >
+      <div class="" >
+        <input class="image" type="image" src="image/logoCorreios.jpg" alt="logo">
+      </div>
+      <div class="headtext" >UNIDADE:</div>
+      <div class="headtext" >CARGA RECEBIDA:</div>
+    </span>
+    <div class="uniddate" >
+      <div  class="unidade" id="unidade">unidade
+      </div>
+      <div class="select" >
+        <div class="option"  name="option" id="optionB1a">opções</div>
+        <div  class="data" id="dataB1a">datas</div>
+      </div>          
+    </div>
+    <span class="head" >
+      
+      <div class="headtext" > DISTRITO:</div>
+      <div class="headtext" >CELULA DE INDU&Ccedil;&Atilde;O :</div>
+    </span>
+    <div class="distrit" >
+      <div class="numerotext" >Nº</div>
+        <div class="numerofolha"  id="numerofolha1a" >n</div>
+      <div class="celula" >
+        <label  class="celulas" for=""> <p>ASSINALAR COM UM "X" NO PARENTESES CORRESPONDENTE</p> </label>
+        <div id="cumbica" class="celulas" ></div>
+        <div id="PqSaoluiz" class="celulas" ></div>              
+        <div id="are" class="celulas" ></div>
+        <div id="macedo" class="celulas" > </div>
+        <div id="guarulhos" class="celulas" ></div>
+        <div id="oitodez" class="celulas" ></div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="bandeira" >
+    <span class="head" >
+      <div class="" >
+        <input class="image" type="image" src="image/logoCorreios.jpg" alt="logo">
+      </div>
+      <div class="headtext" >UNIDADE:</div>
+      <div class="headtext" >CARGA RECEBIDA:</div>
+    </span>
+    <div class="uniddate" >
+      <div  class="unidade" id="unidade">unidade
+      </div>
+      <div class="select" >
+        <div class="option"  name="option" id="optionB1a">opções</div>
+        <div  class="data" id="dataB1a">datas</div>
+      </div>          
+    </div>
+    <span class="head" >
+      
+      <div class="headtext" > DISTRITO:</div>
+      <div class="headtext" >CELULA DE INDU&Ccedil;&Atilde;O :</div>
+    </span>
+    <div class="distrit" >
+      <div class="numerotext" >Nº</div>
+        <div class="numerofolha"  id="numerofolha1a" >n</div>
+      <div class="celula" >
+        <label  class="celulas" for=""> <p>ASSINALAR COM UM "X" NO PARENTESES CORRESPONDENTE</p> </label>
+        <div id="cumbica" class="celulas" ></div>
+        <div id="PqSaoluiz" class="celulas" ></div>              
+        <div id="are" class="celulas" ></div>
+        <div id="macedo" class="celulas" > </div>
+        <div id="guarulhos" class="celulas" ></div>
+        <div id="oitodez" class="celulas" ></div>
+        
+      </div>
+    </div>
+  </div>
+    
+  <div class="modal-container" id="modal-Bandeira" >
+    <div class="modal" >
+      <button class="fechar" >X</button>
+      <h3>Digite</h3>
+      
+      <form action="">
+        <input type="date"  id="txtdata1a" >
+        <input class="bt" type="button" value="Salvar" onclick="Salvar()" id="btn_salvar_modal" >
+      </form>
+
+    </div>
+  </div>
+  
+
+        
+
+
+  <script src="script.js" defer ></script>
+</body>
+</html>

@@ -8,9 +8,13 @@
   
   <title>Bandeiras</title>
 </head>
-<body onload="setInterval('reloadauto()',1000)" >
+<body onload="setInterval('reloadauto()',10000)" >
   <main class="main" >
-    <div class="containerband" >
+    <div class="notprint" >
+      <input class="" type="button" value="Imprimir" onclick="print()">
+      <input class="" type="button" value="Adicionar" onclick="Adicionar()">
+    </div>
+    <div class="containerband" id="popup">
       <section  class="folha" >
         <div class="bandeira" >
           <span class="head" >
@@ -21,21 +25,21 @@
             <div class="headtext" >CARGA RECEBIDA:</div>
           </span>
           <div class="uniddate" >
-            <div id="unidade">unidade
+            <div  class="unidade" id="unidade">unidade
             </div>
             <div class="select" >
               <div class="option"  name="option" id="optionB1a">opções</div>
-              <div  class="dataB1a" id="dataB1a">data</div>
+              <div  class="data" id="dataB1a">datas</div>
             </div>          
           </div>
           <span class="head" >
             
-            <div class="headtext1" > DISTRITO:</div>
-            <div class="headtext1" >CELULA DE INDU&Ccedil;&Atilde;O :</div>
+            <div class="headtext" > DISTRITO:</div>
+            <div class="headtext" >CELULA DE INDU&Ccedil;&Atilde;O :</div>
           </span>
           <div class="distrit" >
             <div class="numerotext" >Nº</div>
-            <div class="numerofolha1a"  id="numerofolha1a" >n</div>
+              <div class="numerofolha"  id="numerofolha1a" >n</div>
             <div class="celula" >
               <label  class="celulas" for=""> <p>ASSINALAR COM UM "X" NO PARENTESES CORRESPONDENTE</p> </label>
               <div id="cumbica" class="celulas" ></div>
@@ -47,17 +51,53 @@
               
             </div>
           </div>
+        
         </div>
         <div class="bandeira" >
-
-
+          <span class="head" >
+            <div class="" >
+              <input class="image" type="image" src="image/logoCorreios.jpg" alt="logo">
+            </div>
+            <div class="headtext" >UNIDADE:</div>
+            <div class="headtext" >CARGA RECEBIDA:</div>
+          </span>
+          <div class="uniddate" >
+            <div  class="unidade" id="unidadeb">unidade
+            </div>
+            <div class="select" >
+              <div class="option"  name="option" id="option1b">opções</div>
+              <div  class="data" id="dataB1b">datas</div>
+            </div>          
+          </div>
+          <span class="head" >
+            
+            <div class="headtext" > DISTRITO:</div>
+            <div class="headtext" >CELULA DE INDU&Ccedil;&Atilde;O :</div>
+          </span>
+          <div class="distrit" >
+            <div class="numerotext" >Nº</div>
+              <div class="numerofolha"  id="numerofolha1b" >n</div>
+            <div class="celula" >
+              <label  class="celulas" for=""> <p>ASSINALAR COM UM "X" NO PARENTESES CORRESPONDENTE</p> </label>
+              <div id="cumbica" class="celulas" ></div>
+              <div id="PqSaoluiz" class="celulas" ></div>              
+              <div id="are" class="celulas" ></div>
+              <div id="macedo" class="celulas" > </div>
+              <div id="guarulhos" class="celulas" ></div>
+              <div id="oitodez" class="celulas" ></div>
+              
+            </div>
+          </div>
+        
         </div>
-      </section>
-         
+        
+      </section>        
 
       
     </div>
+    
   </main>
+  <script src="script.js"></script>
   <script>
     function reloadauto(){
       window.location.reload();
@@ -66,89 +106,102 @@
     const unidade=document.getElementById('unidade')
     unidade.innerHTML=localStorage.getItem('unidade')
     //script folha 1 bandeira A
+
     const option1a=document.querySelector('.option')
     option1a.innerHTML=localStorage.getItem('optionf1a')
     const datebf1a=document.getElementById('dataB1a')
     datebf1a.innerHTML=localStorage.getItem('datef1a') 
     const distrito1a=document.getElementById('numerofolha1a')
     distrito1a.innerHTML=localStorage.getItem('distrito1a')
+
+    //script folha 1 bandeira B
+    const unidadeb=document.getElementById('unidadeb')
+    unidadeb.innerHTML=localStorage.getItem('unidade')
+    const option1b=document.querySelector('#option1b')
+    option1b.innerHTML=localStorage.getItem('optionf1b')
+    const datebf1b=document.getElementById('dataB1b')
+    datebf1b.innerHTML=localStorage.getItem('datef1b') 
+    const distrito1b=document.getElementById('numerofolha1b')
+    distrito1b.innerHTML=localStorage.getItem('distrito1b')
+
    
-      let cumbica = document.getElementById('cumbica')
-      let PqSaoluiz = document.getElementById('PqSaoluiz')
-      let are = document.getElementById('are')
-      let macedo = document.getElementById('macedo')
-      let guarulhos = document.getElementById('guarulhos')
-      let oitodez = document.getElementById('oitodez')
+    
+    /* CODIGOS ABAIXA REPRESENTAM A ESTRUTURA DAS CELULAS DE INDIÇÃO
+    */
+    const cumbica = document.getElementById('cumbica')
+    const PqSaoluiz = document.getElementById('PqSaoluiz')
+    const are = document.getElementById('are')
+    const macedo = document.getElementById('macedo')
+    const guarulhos = document.getElementById('guarulhos')
+    const oitodez = document.getElementById('oitodez')
 
-      let distritos= localStorage.getItem('distrito1a')
-        if(distritos <= 309){
-          cumbica.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) CUMBICA/PIMENTAS"
-          PqSaoluiz.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) PARQUE S&Atilde;O LUIZ"
-          are.innerHTML = "&nbsp;&nbsp;     (&nbsp;&nbsp;) ARE "
-          macedo.innerHTML="&nbsp;&nbsp;    (&nbsp;&nbsp;) MACEDO "
-          guarulhos.innerHTML="&nbsp;&nbsp; (X) GUARULHOS"
-          oitodez.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) OITO DE DEZEMBRO"
-
-
-        }     
+    let distritos= localStorage.getItem('distrito1a','distrito1b')
+    if(distritos <=309 && distritos >=301){
       
-        if(distritos >=339){
-          cumbica.innerHTML="&nbsp;&nbsp;   (X) CUMBICA/PIMENTAS"
-          PqSaoluiz.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) PARQUE S&Atilde;O LUIZ"
-          are.innerHTML = "&nbsp;&nbsp;     (&nbsp;&nbsp;) ARE "
-          macedo.innerHTML="&nbsp;&nbsp;    (&nbsp;&nbsp;) MACEDO "
-          guarulhos.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) GUARULHOS"
-          oitodez.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) OITO DE DEZEMBRO"
+      cumbica.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) CUMBICA/PIMENTAS"
+      PqSaoluiz.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) PARQUE S&Atilde;O LUIZ"
+      are.innerHTML = "&nbsp;&nbsp;     (&nbsp;&nbsp;) ARE "
+      macedo.innerHTML="&nbsp;&nbsp;    (&nbsp;&nbsp;) MACEDO "
+      guarulhos.innerHTML="&nbsp;&nbsp; (X) GUARULHOS"
+      oitodez.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) OITO DE DEZEMBRO"
+    }
+    if(distritos >=310 && distritos <=318){
+      cumbica.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) CUMBICA/PIMENTAS"
+      PqSaoluiz.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) PARQUE S&Atilde;O LUIZ"
+      are.innerHTML = "&nbsp;&nbsp;     (&nbsp;&nbsp;) ARE "
+      macedo.innerHTML="&nbsp;&nbsp;    (X) MACEDO "
+      guarulhos.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) GUARULHOS"
+      oitodez.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) OITO DE DEZEMBRO"
+    }
+    if(distritos >=319 && distritos <=326){
+      cumbica.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) CUMBICA/PIMENTAS"
+      PqSaoluiz.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) PARQUE S&Atilde;O LUIZ"
+      are.innerHTML = "&nbsp;&nbsp;     (&nbsp;&nbsp;) ARE "
+      macedo.innerHTML="&nbsp;&nbsp;    (&nbsp;&nbsp;) MACEDO "
+      guarulhos.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) GUARULHOS"
+      oitodez.innerHTML="&nbsp;&nbsp;   (X) OITO DE DEZEMBRO"
 
+    }
+    if(distritos == 327){
+      cumbica.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) CUMBICA/PIMENTAS"
+      PqSaoluiz.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) PARQUE S&Atilde;O LUIZ"
+      are.innerHTML = "&nbsp;&nbsp;     (X) ARE "
+      macedo.innerHTML="&nbsp;&nbsp;    (&nbsp;&nbsp;) MACEDO "
+      guarulhos.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) GUARULHOS"
+      oitodez.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) OITO DE DEZEMBRO"
 
-        } 
-        /*if(distritos <=318) {
-          cumbica.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) CUMBICA/PIMENTAS"
-          PqSaoluiz.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) PARQUE S&Atilde;O LUIZ"
-          are.innerHTML = "&nbsp;&nbsp;     (&nbsp;&nbsp;) ARE "
-          macedo.innerHTML="&nbsp;&nbsp;    (X) MACEDO "
-          guarulhos.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) GUARULHOS"
-          oitodez.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) OITO DE DEZEMBRO"
+    }
+    if(distritos == 328 || distritos == 351){
+      cumbica.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) CUMBICA/PIMENTAS"
+      PqSaoluiz.innerHTML="&nbsp;&nbsp; (X) PARQUE S&Atilde;O LUIZ"
+      are.innerHTML = "&nbsp;&nbsp;     (&nbsp;&nbsp;) ARE "
+      macedo.innerHTML="&nbsp;&nbsp;    (&nbsp;&nbsp;) MACEDO "
+      guarulhos.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) GUARULHOS"
+      oitodez.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) OITO DE DEZEMBRO"
 
-        }
-        /*if(distritos <=326) {
-          cumbica.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) CUMBICA/PIMENTAS"
-          PqSaoluiz.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) PARQUE S&Atilde;O LUIZ"
-          are.innerHTML = "&nbsp;&nbsp;     (&nbsp;&nbsp;) ARE "
-          macedo.innerHTML="&nbsp;&nbsp;    (&nbsp;&nbsp;) MACEDO "
-          guarulhos.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) GUARULHOS"
-          oitodez.innerHTML="&nbsp;&nbsp;   (X) OITO DE DEZEMBRO"
+    }
+    
+    if(distritos >=329 && distritos <=338){
+      cumbica.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) CUMBICA/PIMENTAS"
+      PqSaoluiz.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) PARQUE S&Atilde;O LUIZ"
+      are.innerHTML = "&nbsp;&nbsp;     (X) ARE "
+      macedo.innerHTML="&nbsp;&nbsp;    (&nbsp;&nbsp;) MACEDO "
+      guarulhos.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) GUARULHOS"
+      oitodez.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) OITO DE DEZEMBRO"
+    }
+    if(distritos >=339 && distritos <= 350){
+      cumbica.innerHTML="&nbsp;&nbsp;   (X) CUMBICA/PIMENTAS"
+      PqSaoluiz.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) PARQUE S&Atilde;O LUIZ"
+      are.innerHTML = "&nbsp;&nbsp;     (&nbsp;&nbsp;) ARE "
+      macedo.innerHTML="&nbsp;&nbsp;    (&nbsp;&nbsp;) MACEDO "
+      guarulhos.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) GUARULHOS"
+      oitodez.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) OITO DE DEZEMBRO"
 
-        }
-        /*if(distritos >=329) {
-          cumbica.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) CUMBICA/PIMENTAS"
-          PqSaoluiz.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) PARQUE S&Atilde;O LUIZ"
-          are.innerHTML = "&nbsp;&nbsp;     (X) ARE "
-          macedo.innerHTML="&nbsp;&nbsp;    (&nbsp;&nbsp;) MACEDO "
-          guarulhos.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) GUARULHOS"
-          oitodez.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) OITO DE DEZEMBRO"
-
-        }
-        /*if(distritos == 328) {
-          cumbica.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) CUMBICA/PIMENTAS"
-          PqSaoluiz.innerHTML="&nbsp;&nbsp; (X) PARQUE S&Atilde;O LUIZ"
-          are.innerHTML = "&nbsp;&nbsp;     (&nbsp;&nbsp;) ARE "
-          macedo.innerHTML="&nbsp;&nbsp;    (&nbsp;&nbsp;) MACEDO "
-          guarulhos.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) GUARULHOS"
-          oitodez.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) OITO DE DEZEMBRO"
-
-        }
-       /* if(distritos == 351) {
-          cumbica.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) CUMBICA/PIMENTAS"
-          PqSaoluiz.innerHTML="&nbsp;&nbsp; (X) PARQUE S&Atilde;O LUIZ"
-          are.innerHTML = "&nbsp;&nbsp;     (&nbsp;&nbsp;) ARE "
-          macedo.innerHTML="&nbsp;&nbsp;    (&nbsp;&nbsp;) MACEDO "
-          guarulhos.innerHTML="&nbsp;&nbsp; (&nbsp;&nbsp;) GUARULHOS"
-          oitodez.innerHTML="&nbsp;&nbsp;   (&nbsp;&nbsp;) OITO DE DEZEMBRO"
-
-        }*/
+      }  
       
-      console.log(distritos)
+        
+      
+      
   </script>
 </body>
 </html>

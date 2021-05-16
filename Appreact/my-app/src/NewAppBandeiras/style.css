@@ -1,0 +1,195 @@
+/*dados*/
+body{
+  padding: 0;
+}
+.container{
+  width: 800px;
+  height: 1000px;
+  background-color: rgb(250, 242, 242);
+}
+table{
+  width: 100%;
+  height: 100%;
+}
+.date{
+  border-radius: 6%;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #fff; 
+  align-items: center;
+  text-align: center;
+  font-size: 99%;
+
+
+}
+.distrito{
+  border-radius: 6%;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #fff;  
+  align-items: center;
+  text-align: center;
+  font-size: 99%;
+}
+.opções{
+  height: 100%;
+  text-align: center;
+  font-size: 99%;
+}
+.bt{
+  border:1px solid #25692A;
+  border-radius:4px;
+  display:inline-block;
+  cursor:pointer;
+  font-family:Verdana;
+  font-weight:bold;
+  font-size:16px;
+  padding:12px 15px;
+  text-decoration:none;
+}
+
+
+/*fim dados*/
+/*Bandeiras*/
+
+.main{
+  width: 1000px;
+  height: 11000px;
+  background-color: rgb(201, 189, 174);
+  justify-content: center;
+  align-items: center;
+  
+}
+@media print { 
+  .notprint { visibility:hidden; } 
+}
+
+.containerband{
+  width: 99%;
+  height: 100%;
+  margin-left: 0.5%;
+  border: rgb(236, 238, 234) 1pt solid;
+  background-color: rgb(201, 219, 219);
+}
+.section{
+  width: 100%;
+  height: 12.9%;
+  border: darkblue 1pt solid;
+  margin-bottom: 10%;
+  margin-top: 1%;
+
+}
+.bandeira{
+  width: 100%;
+  height: 49%;
+  margin-bottom: 2%;
+  border: 1pt solid #000;
+}
+.image{
+  height: 50px;
+  width: 180px;
+}
+.head{
+  display: flex;
+  width: 100%;
+  height: 10%;
+}
+.headtext{
+  display: flex;
+  width: 33%;
+  text-align: center;
+  font-size: 23pt;
+  align-items: center;
+  text-align: center; 
+  justify-content: center
+
+}
+.uniddate{
+  display: flex;
+  
+  width: 100%;
+  height: 30%;
+
+}
+.unidade{
+  width: 49.5%;
+  background-color: rgb(197, 189, 178);
+  font-size: 60px;
+  text-align: center;
+  justify-content: center;
+}
+.select{
+  width: 50%;
+}
+
+
+.option{
+  background-color: rgb(245, 244, 231);
+  width: 100%;
+  height: 50%;
+  font-size: 80px;
+  text-align: center;
+
+}
+.data{
+  background-color: rgb(236, 236, 231);
+  width: 100%;
+  height: 50%;
+  font-size: 90px;
+  text-align: center;
+}
+select{
+  width: 100%;
+  border-radius: 1%;
+  border: rgb(214, 210, 216);
+}
+.distrit{
+  display: flex;
+  background-color: rgb(235, 222, 222);
+  width: 100%;
+  height: 400px;
+}
+.numerotext{
+  display: flex;
+  background-color: darkturquoise;
+  width: 15%;
+  height: 100%;
+  font-size: 100px;
+  align-items: center;
+  text-align: center; 
+  justify-content: center;
+
+}
+.numerofolha{
+  display: flex;
+  background-color: darkturquoise;
+  width: 35%;
+  height: 100%;
+  font-size: 160px;
+  align-items: center;
+  text-align: center; 
+  justify-content: center;
+  
+  
+}
+.headtext{
+  display: flex;
+  width: 50%;
+  text-align: center;
+  font-size: 23pt;
+  align-items: center;
+  text-align: center; 
+  justify-content: center
+
+}
+.celula{
+  width: 40%;
+  height: 10%;
+  margin: 1%;
+  
+}
+.celulas{
+  font-size: 17pt;
+  font-weight: bold;
+}
+

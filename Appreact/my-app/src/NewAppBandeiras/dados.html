@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Bandeiramento Padrão</title>
+</head>
+ 
+<body onbeforeunload="">
+  <div class="container" >
+    <div>
+      <input id="unidade" type="text" value="CEE guarulhos">
+      <input class="bt" type="button" value="Salvar" id="btnSalvar" >
+    </div>
+    <table>
+      <tr>
+        <th>DATA</th>
+        <th>DISTRITO</th> 
+        <th>TIPO DE CARGA</th>
+        
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate1a">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="301" id="txtdistrito1a" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1a" id="optionf1a">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate1b">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="302" id="txtdistrito1b" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="optionf1b">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate3">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="303" id="txtdistrito3" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption3">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate4">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="304" id="txtdistrito4" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption4">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate5">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="305" id="txtdistrito5" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption5">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate6">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="306" id="txtdistrito6" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption6">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate7">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="307" id="txtdistrito7" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption7">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate8">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="308" id="txtdistrito8" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption8">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate9">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="309" id="txtdistrito9" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption9">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate10">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="310" id="txtdistrito10" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption10">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate11">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="311" id="txtdistrito11" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption11">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate12">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="312" id="txtdistrito12" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption12">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate13">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="313" id="txtdistrito13" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption13">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate14">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="314" id="txtdistrito14" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption14">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate15">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="315" id="txtdistrito15" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption15">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate16">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="316" id="txtdistrito16" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption16">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate17">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="317" id="txtdistrito17" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption17">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate18">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="318" id="txtdistrito18" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption18">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate19">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="319" id="txtdistrito19" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption19">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate20">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="320" id="txtdistrito20" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption20">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate21">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="321" id="txtdistrito21" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption21">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate22">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="322" id="txtdistrito22" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption22">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate23">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="323" id="txtdistrito23" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption23">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate24">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="324" id="txtdistrito24" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption24">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate25">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="325" id="txtdistrito25" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption25">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate26">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="326" id="txtdistrito26" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption26">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate27">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="327" id="txtdistrito27" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption27">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate28">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="328" id="txtdistrito28" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption28">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate29">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="329" id="txtdistrito29" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption29">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate30">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="330" id="txtdistrito30" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption30">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate31">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="331" id="txtdistrito31" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption31">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate32">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="332" id="txtdistrito32" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption32">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate33">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="333" id="txtdistrito33" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption33">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate34">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="334" id="txtdistrito34" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption34">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate35">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="335" id="txtdistrito35" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption35">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate36">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="336" id="txtdistrito36" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption36">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate37">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="337" id="txtdistrito37" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption37">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate38">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="338" id="txtdistrito38" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption38">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate39">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="339" id="txtdistrito39" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption39">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate40">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="340" id="txtdistrito40" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption40">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate41">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="341" id="txtdistrito41" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption41">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate42">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="342" id="txtdistrito42" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption42">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate44">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="344" id="txtdistrito44" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption44">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate45">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="345" id="txtdistrito45" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption45">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate46">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="346" id="txtdistrito46" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption46">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate47">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="347" id="txtdistrito47" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption47">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate48">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="348" id="txtdistrito48" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption48">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate49">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="349" id="txtdistrito49" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption49">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate50">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="350" id="txtdistrito50" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption50">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+      <tr>
+        <td>
+          <input  class="date" type="date" name="date1" id="txtdate51">          
+        </td>
+        <td>
+          <input class="distrito" type="text"  value="351" id="txtdistrito51" maxlength="4" >
+        </td> 
+        <td>
+          <select class="opções" name="optionf1b" id="txtoption51">
+            <option value="carga"></option>            
+            <option value="PAC">PAC</option>
+            <option value="SEDEXPAC">SEDEX/PAC</option>
+          </select>
+        </td>       
+      </tr>
+           
+    </table>
+    
+    
+    
+  </div>
+  <script src="script.js"></script>  
+</body>
+</html>

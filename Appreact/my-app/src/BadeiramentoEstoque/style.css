@@ -1,15 +1,99 @@
-/*dados*/
 body{
-  padding: 0;
+  width: 1000px;
+  height: 11000px;
+  
 }
+
+@media print { 
+  .notprint { visibility:hidden; } 
+}
+#popup{
+  position: fixed;
+  top: 0;bottom: 0;left: 0;right: 0;
+  width: 600px;
+  height: 600px;
+  margin: auto;
+  background-color: rgb(250, 242, 242);
+  padding: 10px;
+  border: black 1pt solid;
+  display: none;
+
+}
+.modal-container{
+  width: 100vw;
+  height: 100vh;
+  left: 0px; right: 0px; bottom: 0px;top: 0px;
+  background-color: rgba(0,0,0,0.5);
+  position: fixed;
+  z-index: 2000;
+  display: flex;
+  display: none; 
+  justify-content: center;
+  align-items: center;
+}
+.modal-container.mostrar{
+  display: flex;
+}
+.modal{
+  background-color: cornsilk;
+  width: 40%;
+  min-width: 600px;
+  padding: 40px;
+  border: 10px solid #988b7a;
+  box-shadow: 0 0 0 10px white;
+  position: relative;
+
+}
+@keyframes modal{
+  from{
+    opacity: 0;
+    transform: translate3d(0,-60px,0);
+  }
+  to{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+
+  }
+}
+.mostrar.modal{
+  animation: modal.3s;
+}
+
+.fechar{
+  position: relative;
+  font-size: 1.2em;
+  top: -90%;
+  right: -90%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  background-color: #988b7a;
+  color: rgb(252, 248, 248);
+  font-family: "PT Mono", monospace;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(0,0,0,.3);
+}
+
+/*fim modal*/
+/* Todas as baideiras inicio*/
 .container{
-  width: 800px;
-  height: 1000px;
+  width: 100%;
+  height: 100%;
   background-color: rgb(250, 242, 242);
 }
 table{
   width: 100%;
   height: 100%;
+}
+tr{
+  height: 50%;
+  
+}
+th{
+  height: 50%;
+  
+
 }
 .date{
   border-radius: 6%;
@@ -17,7 +101,9 @@ table{
   height: 100%;
   border: 1px solid #fff; 
   align-items: center;
-  border-right: solid 1pt #000;
+  text-align: center;
+  font-size: 99%;
+
 
 }
 .distrito{
@@ -26,27 +112,36 @@ table{
   height: 100%;
   border: 1px solid #fff;  
   align-items: center;
+  text-align: center;
+  font-size: 99%;
+}
+.opções{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: 99%;
+}
+.bt{
+  border:1px solid #25692A;
+  border-radius:4px;
+  display:inline-block;
+  cursor:pointer;
+  font-family:Verdana;
+  font-weight:bold;
+  font-size:16px;
+  padding:12px 15px;
+  text-decoration:none;
 }
 
 
-/*fim dados*/
-/*Bandeiras*/
-.main{
-  width: 1000px;
-  height: 11000px;
-  background-color: rgb(201, 189, 174);
-  justify-content: center;
-  align-items: center;
-  
-}
 .containerband{
-  width: 99%;
+  width: 990px;
   height: 100%;
   margin-left: 0.5%;
   border: rgb(236, 238, 234) 1pt solid;
   background-color: rgb(201, 219, 219);
 }
-section{
+/*.section{
   width: 100%;
   height: 12.9%;
   border: darkblue 1pt solid;
@@ -54,10 +149,12 @@ section{
   margin-top: 1%;
 
 }
+*/
 .bandeira{
   width: 100%;
-  height: 49%;
-  margin-bottom: 2%;
+  height: 650px;
+  margin-bottom: 11%;
+  margin-top: 2%;
   border: 1pt solid #000;
 }
 .image{
@@ -86,13 +183,14 @@ section{
   height: 30%;
 
 }
-#unidade{
+.unidade{
   width: 49.5%;
   background-color: rgb(197, 189, 178);
   font-size: 60px;
   text-align: center;
   justify-content: center;
 }
+
 .select{
   width: 50%;
 }
@@ -106,18 +204,14 @@ section{
   text-align: center;
 
 }
-.dataB1a{
+.data{
   background-color: rgb(236, 236, 231);
   width: 100%;
   height: 50%;
   font-size: 90px;
   text-align: center;
 }
-select{
-  width: 100%;
-  border-radius: 1%;
-  border: rgb(214, 210, 216);
-}
+
 .distrit{
   display: flex;
   background-color: rgb(236, 228, 228);
@@ -135,7 +229,7 @@ select{
   justify-content: center;
 
 }
-.numerofolha1a{
+.numerofolha{
   display: flex;
   background-color: darkturquoise;
   width: 35%;
@@ -147,7 +241,7 @@ select{
   
   
 }
-.headtext1{
+.headtext{
   display: flex;
   width: 50%;
   text-align: center;
@@ -167,4 +261,5 @@ select{
   font-size: 17pt;
   font-weight: bold;
 }
-
+/* Todas as baideiras FIM*/
+/* classes para bandeiras individuais*/

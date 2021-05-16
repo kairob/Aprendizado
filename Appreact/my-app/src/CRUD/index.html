@@ -19,7 +19,7 @@
     </div>
     <div class="row" >
       <div class="col-md-12" >
-        <button type="button" class="btn btn-primary float-end" >Adicionar Itens</button>
+        <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#modalRegistro" >Adicionar Itens</button>
       </div>
     </div>
     <div class="row" style="margin: 10px;" >
@@ -39,6 +39,50 @@
             
           </tbody>
         </table>
+      </div>
+    </div>
+    <div class="modal fade" id="modalRegistro" tabindex="-1" aria-labelledby="modalRegistroLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalRegistroLabel">Registros</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row" >
+              <div class="col-md-6" >
+                <div class="form-group" >
+                  <label for="">Nome</label>
+                  <input  class="form-control" id="txtNome" type="text" placeholder="digite o nome..." >
+                </div>
+
+              </div>
+              <div class="col-md-6" >
+                <div class="form-group" >
+                  <label for="">Sobrenome</label>
+                  <input  class="form-control" id="txtSobrenome" type="text" placeholder="digite o Sobrenome..." >
+                </div>                
+              </div>
+              <div class="col-md-6" >
+                <div class="form-group" >
+                  <label for="">Data de Nascimento</label>
+                  <input  class="form-control" id="txtDtNascimento" type="date"  >
+                </div>
+
+              </div>
+              <div class="col-md-6" >
+                <div class="form-group" >
+                  <label for=""> Formação</label>
+                  <input  class="form-control" id="txtFormacao" type="text" placeholder="digite a Formação..." >
+                </div>
+
+            </div>            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-primary" id="btnSalvar" >Salvar</button>
+          </div>
+        </div>
       </div>
     </div>
 
