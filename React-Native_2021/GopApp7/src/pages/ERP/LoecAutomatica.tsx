@@ -1,0 +1,50 @@
+/* eslint-disable prettier/prettier */
+import React from 'react';
+import {
+  View,
+  SafeAreaView,
+  StatusBar,
+  TouchableOpacity,
+  Text,
+} from 'react-native';
+
+////////////////////////////////////////////////////////////////////////////////////////////
+//Parametros de navegação
+import {useNavigation} from '@react-navigation/native';
+import {RootStackParamsList} from '../../App';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+type homeScreenProp = NativeStackNavigationProp<
+  RootStackParamsList,
+  'LoecAutomatica'
+>;
+///////////////////////////////////////////////////////////////////////////////////////////
+import StylePage from '../../PageGlobalStyle/PageStyle';
+import StylesHeaders from '../../HeaderGlobal/StylesHeaders';
+
+export default function LoecAutomatica() {
+  const navigation = useNavigation<homeScreenProp>();
+
+  return (
+    <SafeAreaView style={StylePage.ContainerLoecAutomatica}>
+      <StatusBar backgroundColor="cornflowerblue" barStyle="dark-content" />
+      <View style={StylePage.containerHeader}>
+        <View style={StylesHeaders.ContainerHeader}>
+          <View style={StylesHeaders.BoxGroupHeadersLeft}>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('Modules');
+              }}>
+              <View style={StylePage.BackButonModules} />
+            </TouchableOpacity>
+          </View>
+          <View style={StylesHeaders.BoxGroupHeadersCenter}>
+            <Text>Loec Automatica:</Text>
+          </View>
+          <View style={StylesHeaders.BoxGroupHeadersRight} />
+        </View>
+      </View>
+      <View style={StylePage.ContainerBodyLoecAutomatica} />
+      <View style={StylePage.ContainerFooterLoecAutomatica} />
+    </SafeAreaView>
+  );
+}
