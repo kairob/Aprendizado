@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "230556422993",
+    "project_id": "geopapp-64f45",
+    "storage_bucket": "geopapp-64f45.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230556422993:android:42d2f844a30dd7c6e87970",
+        "android_client_info": {
+          "package_name": "com.gopapp8"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "230556422993-n1tabgjotggkt66l6im1dmgisfvht3ug.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAG2vqNaq2XKS0BQJuKY8P0cFuJRsaxT2k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "230556422993-n1tabgjotggkt66l6im1dmgisfvht3ug.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
