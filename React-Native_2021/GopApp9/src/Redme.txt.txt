@@ -1,0 +1,8 @@
+yarn add @react-navigation/native
+yarn add react-native-screens react-native-safe-area-context
+yarn add @react-navigation/native-stack
+
+yarn add react-native-elements
+yarn add react-native-vector-icons
+npx react-native link react-native-vector-icons
+npx react-native link react-native-safe-area-context
