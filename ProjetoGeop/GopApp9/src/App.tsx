@@ -68,13 +68,13 @@ export default function A() {
                options={{headerShown: false}} name="ActivitySchedule"
               component={ActivitySchedule}
             />
-            <Stack.Screen  options={{headerShown: true}} name="Effective" component={Effective} />
+            <Stack.Screen  options={{headerShown: false}} name="Effective" component={Effective} />
             <Stack.Screen options={{headerShown: false}}  name="NewEffective" component={NewEffective} />
             <Stack.Screen  options={{headerShown: false}} name="FabButton" component={FabButton} />
 
             
             <Stack.Screen
-              
+              options={{headerShown: false}} 
               name="DetailsEffective"
               component={DetailsEffective}
             />
