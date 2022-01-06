@@ -45,9 +45,10 @@ const SignupConfig = Yup.object().shape({
 
 
 export default function Formularios() {
+
   return (
     <Formik
-      initialValues={{ email: '', password: '', name: '' }}
+      initialValues={{ modelo: '', placa: '', name: '' }}
       validationSchema={SignupConfig}
       onSubmit={values => {
         Keyboard.dismiss();
@@ -58,39 +59,33 @@ export default function Formularios() {
         <Container>
           <StatusBar barStyle="light-content" backgroundColor="#0f198c" />
           <Form>
-            <Title>Formik + Yup</Title>
+            <Title>Veiculos</Title>
 
-            <Label>Nome Completo</Label>
+            <Label>Modelo</Label>
             <Input
-              value={values.name}
-              onChangeText={handleChange('name')}
+              value={values.modelo}
+              onChangeText={handleChange('modelo')}
               autoCapitalize="none"
-              autoCorrect={false}
-              placeholder="Nome Sobrenome"
+              autoCorrect={false}             
               returnKeyType="next"
               onSubmitEditing={() => this.email.focus()}
             />
 
-            <Error>{errors.name}</Error>
+            <Error>{errors.modelo}</Error>
 
-            <Label>E-mail</Label>
+            <Label>Placa</Label>
             <Input
-              value={values.email}
-              onChangeText={handleChange('email')}
+              value={values.placa}
+              onChangeText={handleChange('placa')}
               autoCapitalize="none"
-              autoCorrect={false}
-              keyboardType="email-address"
-              placeholder="user@mail.com"
-              returnKeyType="next"
-              ref={input => {
-                this.email = input;
-              }}
+              autoCorrect={false}              
+              returnKeyType="next"             
               onSubmitEditing={() => this.password.focus()}
             />
 
-            <Error>{errors.email}</Error>
+            <Error>{errors.placa}</Error>
 
-            <Label>Senha</Label>
+         { /*  <Label>Senha</Label>
             <Input
               value={values.password}
               onChangeText={handleChange('password')}
@@ -100,12 +95,10 @@ export default function Formularios() {
               keyboardType="email-address"
               placeholder="senha secreta"
               returnKeyType="send"
-              ref={input => {
-                this.password = input;
-              }}
+              
             />
 
-            <Error>{errors.password}</Error>
+         <Error>{errors.password}</Error>*/}
 
             <SubmitButton onPress={handleSubmit}>
               <SubmitButtonText>Continuar</SubmitButtonText>

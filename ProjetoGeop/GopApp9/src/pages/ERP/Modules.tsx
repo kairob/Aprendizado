@@ -58,7 +58,7 @@ export default function Modulos() {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate('Cars');
+              navigation.navigate('Formularios');
             }}
             style={StylePage.TouchableModules}>
             <View>

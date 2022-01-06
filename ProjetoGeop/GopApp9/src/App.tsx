@@ -21,7 +21,7 @@ import Effective from './pages/ERP/Effectve/Effective';
 import NewEffective from './pages/ERP/Effectve/NewEffective';
 import DetailsEffective from './pages/ERP/Effectve/DetailsEffective';
 import FabButton from './pages/ERP/Effectve/components/FabButton';
-import Form from './Formick/Main'
+import Formularios from './Formick/Main'
 import {NativeBaseProvider} from 'native-base';
 
 export type RootStackParamsList = {
@@ -42,7 +42,7 @@ export type RootStackParamsList = {
   FabButton: undefined;
   NewEffective: undefined;
   DetailsEffective: undefined;
-  Form: undefined;
+  Formularios: undefined;
 };
 const Stack = createNativeStackNavigator();
 export default function A() {
@@ -52,7 +52,7 @@ export default function A() {
         <NavigationContainer>
           <Stack.Navigator
            
-            initialRouteName="Form">
+            initialRouteName="Home">
             <Stack.Screen  options={{headerShown: false}} name="Home" component={Principal} />
             <Stack.Screen  options={{headerShown: false}} name="Group" component={SectorYellow} />
             <Stack.Screen  options={{headerShown: false}} name="ProdInd" component={ProdInd} />
@@ -81,8 +81,8 @@ export default function A() {
             />
             <Stack.Screen
               options={{headerShown: false}} 
-              name="Form"
-              component={Form}
+              name="Formularios"
+              component={Formularios}
             />
           </Stack.Navigator>
         </NavigationContainer>

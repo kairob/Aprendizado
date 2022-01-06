@@ -1,10 +1,20 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { FAB } from 'react-native-elements';
+import Formularios from '../../../../../Formick/Main'
+////////////////////////////////////////////////////////////////////////////////////////////
+//Parametros de navegação
+import {useNavigation} from '@react-navigation/native';
+import {RootStackParamsList} from '../../../../../App';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+type homeScreenProp = NativeStackNavigationProp<
+  RootStackParamsList,
+  'FabButton'
+>;
+///////////////////////////////////////////////////////////////////////////////////////////
 
 export default function FabButton()  {
-  const [visible, setVisible] = React.useState(true);
-
+  const navigation = useNavigation<homeScreenProp>();
   return (
     <>
       <View
@@ -18,11 +28,11 @@ export default function FabButton()  {
        
        
         <FAB
-          visible={visible}
-          onPress={() => setVisible(!visible)}
+          
+          onPress={() => navigation.navigate('Formularios')}
           placement="right"
-          title="Hide"
-          icon={{ name: '', color: 'white' }}
+          
+          icon={{ name: 'add', color: 'white' }}
           color="red"
         />
         
