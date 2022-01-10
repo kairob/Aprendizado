@@ -16,7 +16,7 @@ type homeScreenProp = NativeStackNavigationProp<RootStackParamsList, 'Home'>;
 export default function Principal() {
   return (
     <SafeAreaView style={StylePage.Container}>
-      <StatusBar backgroundColor="cornflowerblue" barStyle="light-content" />
+      <StatusBar backgroundColor="cornflowerblue" barStyle="light-content"  />
 
       <View style={StylePage.containerHeader} />
       <View style={StylePage.ContainerBody}>

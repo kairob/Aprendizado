@@ -10,6 +10,9 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-native-fontawesome": "^0.2.7",
     "@mdi/js": "^6.5.95",
     "@mdi/react": "^1.5.0",
     "@react-native-firebase/app": "^14.1.0",
@@ -20,6 +23,7 @@
     "@unform/core": "^2.1.6",
     "@unform/mobile": "^2.1.6",
     "@unform/web": "^2.1.6",
+    "antd": "^4.18.2",
     "formik": "^2.2.9",
     "native-base": "^3.2.2",
     "react": "17.0.2",

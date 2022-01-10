@@ -39,7 +39,7 @@ const DetailsEffectiveList = ({item}: {item: IItem}) => {
           flex={1}
           color="red.800"
           bold>
-          {item.name}
+          {item.modelo}
         </Text>
         <Text
           _dark={{
@@ -48,7 +48,7 @@ const DetailsEffectiveList = ({item}: {item: IItem}) => {
           flex={1}
           color="red.800"
           bold>
-          {item.matricula}
+          {item.placa}
         </Text>
         <Box>
           <CloseIcon

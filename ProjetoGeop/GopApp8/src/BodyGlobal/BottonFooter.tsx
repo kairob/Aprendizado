@@ -6,6 +6,7 @@ import {useNavigation} from '@react-navigation/native';
 import Styles from './Styles';
 import {RootStackParamsList} from '../App';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import { Button } from 'react-native-paper';
 
 type homeScreenProp = NativeStackNavigationProp<
   RootStackParamsList,
@@ -25,12 +26,16 @@ function BottonFooter() {
             <Text>ERP</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('Peoples')}>
+        <Button icon="account-tie-outline" >
+        <TouchableOpacity onPress={() => navigation.navigate('Effective')}>
           <View style={Styles.BotonRH}>
+
             <Text>Pessoas</Text>
           </View>
         </TouchableOpacity>
+        </Button>
       </View>
+      
     </>
   );
 }

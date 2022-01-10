@@ -3,8 +3,9 @@ import { StyleSheet } from 'react-native';
 import {VStack, FlatList, Box, Spacer, Heading} from 'native-base';
 import firestore from '@react-native-firebase/firestore';
 import NewEffective from './NewEffective'
-import DetailsEffective from './DetailsEffective';
+import DetailsCars from './DetailsCars';
 import {IItem} from './Types';
+import Formularios from '../../../Formick/Main';
 
 const Effective: React.FC = () => {
   const [todos, setTodos] = useState<IItem[]>([]);
@@ -13,21 +14,21 @@ const Effective: React.FC = () => {
     const subscriber = firestore()
       .collection('todos')
       .onSnapshot(snapshot => {
-        const todoList: IItem[] = [] as IItem[];
+        const CarsList: IItem[] = [] as IItem[];
         snapshot.forEach(documentSnapshot => {
           const data = documentSnapshot.data();
-          const todoItem: IItem = {
+          const CarItem: IItem = {
             id: documentSnapshot.id,            
-            matricula:data.matricula,
-            name: data.name,
-            modelo: data.modelo,
+            modelo:data.modelo,
             placa: data.placa,
+            name: data.name,
+            matricula: data.matricula,
             
           };
-          todoList.push(todoItem);
+          CarsList.push(CarItem);
         });
 
-        setTodos(todoList);
+        setTodos(CarsList);
       });
 
     return () => subscriber();
@@ -37,7 +38,7 @@ const Effective: React.FC = () => {
   return (
     
     <VStack  bg="luz.50" space={1} alignItems="center" mt={3}>
-          <NewEffective />
+          <Formularios />
       <Spacer />
       <Box
       
@@ -48,7 +49,7 @@ const Effective: React.FC = () => {
         }}>
         <FlatList
           data={todos}
-          renderItem={({item}) => <DetailsEffective item={item}  />}
+          renderItem={({item}) => <DetailsCars item={item}  />}
           keyExtractor={item => item.id}
         />
       </Box>

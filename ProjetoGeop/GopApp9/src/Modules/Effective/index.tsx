@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { StyleSheet } from 'react-native';
-import {VStack, FlatList, Box, Spacer, Heading} from 'native-base';
+import {VStack, FlatList, Box, Spacer, Heading, Center} from 'native-base';
 import firestore from '@react-native-firebase/firestore';
 import NewEffective from './NewEffective'
 import DetailsEffective from './DetailsEffective';
@@ -20,8 +20,7 @@ const Effective: React.FC = () => {
             id: documentSnapshot.id,            
             matricula:data.matricula,
             name: data.name,
-            modelo: data.modelo,
-            placa: data.placa,
+            
             
           };
           todoList.push(todoItem);
@@ -35,12 +34,12 @@ const Effective: React.FC = () => {
   
   
   return (
-    
-    <VStack  bg="luz.50" space={1} alignItems="center" mt={3}>
-          <NewEffective />
+    <VStack bg="luz.50" space={1} alignItems="center" mt={3}>
+      
+        <NewEffective />
+      
       <Spacer />
       <Box
-      
         pt={12}
         w={{
           base: '100%',
@@ -48,15 +47,12 @@ const Effective: React.FC = () => {
         }}>
         <FlatList
           data={todos}
-          renderItem={({item}) => <DetailsEffective item={item}  />}
+          renderItem={({item}) => <DetailsEffective item={item} />}
           keyExtractor={item => item.id}
         />
       </Box>
-      <Spacer />      
-      
- 
+      <Spacer />
     </VStack>
-    
   );
 };
 

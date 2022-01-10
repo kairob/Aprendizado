@@ -28,7 +28,7 @@ const NewEffective = () => {
       <HStack bg="luz.50">
         <TextInput
         
-        style={{ width:300}}
+        style={{ width:250}}
           label ="nome"
           value={newname}
           onChangeText={setNewname}

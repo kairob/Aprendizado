@@ -9,6 +9,7 @@ import {
   ScrollView,
 } from 'react-native';
 import {Center} from 'native-base';
+import { Appbar } from 'react-native-paper';
 ////////////////////////////////////////////////////////////////////////////////////////////
 //Parametros de navegação
 import {useNavigation} from '@react-navigation/native';
@@ -17,25 +18,24 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 type homeScreenProp = NativeStackNavigationProp<RootStackParamsList, 'Modules'>;
 ///////////////////////////////////////////////////////////////////////////////////////////
 import StylePage from '../../PageGlobalStyle/PageStyle';
-import StylesHeaders from '../../HeaderGlobal/StylesHeaders';
+
 
 
 export default function Modulos() {
   const navigation = useNavigation<homeScreenProp>();
+  
   return (
     <SafeAreaView style={StylePage.ContainerModules}>
       <StatusBar backgroundColor="cornflowerblue" barStyle="dark-content" />
       <ScrollView>
-        <View style={StylePage.containerHeaderModules}>
-          <View style={StylesHeaders.ContainerHeader}>
-            <View style={StylesHeaders.BoxGroupHeadersLeft}>
-              <TouchableOpacity style={StylePage.BackButonModules} />
-            </View>
-            <View style={StylesHeaders.BoxGroupHeadersCenter}>
-              <Text style={StylePage.TitleModules}>Opções:</Text>
-            </View>
-            <View style={StylesHeaders.BoxGroupHeadersRight} />
-          </View>
+
+        <View>
+        <Appbar.Header  style={{backgroundColor: 'cornflowerblue'}}>
+      <Appbar.BackAction onPress={()=> navigation.navigate('Home')} />
+      <Appbar.Content title="Opções" subtitle="Unidade" />
+      
+    </Appbar.Header>
+         
         </View>
         <View style={StylePage.ContainerBodyModules}>
           <TouchableOpacity
