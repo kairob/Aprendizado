@@ -1,10 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import { StyleSheet } from 'react-native';
+import { Appbar } from 'react-native-paper';
 import {VStack, FlatList, Box, Spacer, Heading, Center} from 'native-base';
 import firestore from '@react-native-firebase/firestore';
 import NewEffective from './NewEffective'
 import DetailsEffective from './DetailsEffective';
 import {IItem} from './Types';
+//////////////Parametros de Navegação/////////////////////////////////////////////////////
+import {useNavigation} from '@react-navigation/native';
+import {RootStackParamsList} from '../../App';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+type homeScreenProp = NativeStackNavigationProp<
+  RootStackParamsList,
+  'Effective'
+>;
+///////////////////////////////////////////////////////////////////////////////
 
 const Effective: React.FC = () => {
   const [todos, setTodos] = useState<IItem[]>([]);
@@ -32,13 +42,31 @@ const Effective: React.FC = () => {
     return () => subscriber();
   }, []); 
   
+  const navigation = useNavigation<homeScreenProp>();
   
   return (
-    <VStack bg="luz.50" space={1} alignItems="center" mt={3}>
-      
-        <NewEffective />
-      
-      <Spacer />
+    <VStack alignItems="center">
+      <Box
+        w={{
+          base: '100%',
+        }}>
+          
+        <Appbar.Header style={{backgroundColor: '#0369a1'}}>
+          <Appbar.BackAction
+            onPress={() => {
+              navigation.navigate('Home');
+            }}
+          />
+          <Appbar.Content title="Empregados" subtitle="Lista" />
+          <Appbar.Action
+            icon="plus"
+            onPress={() => {
+              navigation.navigate('NewEffective');
+            }}
+          />
+        </Appbar.Header>
+      </Box>
+
       <Box
         pt={12}
         w={{
