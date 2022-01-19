@@ -3,6 +3,7 @@ export interface IItem {
   createdAt?: Date | String;
   matricula: string;
   name: string;
-  
+isDone: string;
+  title: string;
   
 }

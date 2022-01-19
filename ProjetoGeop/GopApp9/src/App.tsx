@@ -41,7 +41,7 @@ export default function App() {
     <SafeAreaProvider>
       <NativeBaseProvider>
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="Home">
+          <Stack.Navigator initialRouteName="Effective">
             <Stack.Screen
               options={{headerShown: false}}
               name="Home"
@@ -66,12 +66,12 @@ export default function App() {
               name="NewEffective"
               component={NewEffective}
               options={{
-                
+                title:'Incluir Efeftivo ',
                 headerStyle: {
                   backgroundColor: '#0369a1',
                 },
                 headerTitleStyle: {
-                  color: 'white',
+                  color: 'black',
                 },
                 
               }}
