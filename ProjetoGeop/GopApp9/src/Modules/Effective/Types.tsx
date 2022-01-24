@@ -5,5 +5,5 @@ export interface IItem {
   name: string;
 isDone: string;
   title: string;
-  
+  idAtual: string;
 }

@@ -10,6 +10,8 @@ import BottonsIcon from './Principal';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import DashboardPanel from './Modules/DashboardPanel';
 import Effective from './Modules/Effective';
+import DetailsEffective from './Modules/Effective/DetailsEffective';
+
 import NewEffective from './Modules/Effective/NewEffective';
 //import BottonFooter from './BodyGlobal/BottonFooter';
 //import Sector from './pages/Group/Sector';
@@ -33,6 +35,8 @@ export type RootStackParamsList = {
   BottonsIcon: undefined;
   DashboardPanel: undefined;
   Effective: undefined;
+  DetailsEffective: undefined;
+
   NewEffective: undefined;
 };
 const Stack = createNativeStackNavigator();
@@ -59,6 +63,11 @@ export default function App() {
             />
             <Stack.Screen
               options={{headerShown: false}}
+              name="DetailsEffective"
+              component={DetailsEffective}
+            />
+            <Stack.Screen
+              options={{headerShown: false}}
               name="DashboardPanel"
               component={DashboardPanel}
             />
@@ -66,14 +75,13 @@ export default function App() {
               name="NewEffective"
               component={NewEffective}
               options={{
-                title:'Incluir Efeftivo ',
+                title: 'Incluir Efeftivo ',
                 headerStyle: {
                   backgroundColor: '#0369a1',
                 },
                 headerTitleStyle: {
                   color: 'black',
                 },
-                
               }}
             />
           </Stack.Navigator>

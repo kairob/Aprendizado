@@ -15,29 +15,13 @@ import { TouchableOpacity } from 'react-native';
 
 
 const TodoItemList = ({item}: {item: IItem}) => {
- 
- async function handleEdit(id: string) {
-   const [name, setName] = useState('');
-   const [matricula, setMatricula] = useState('');
-   const [data, setData] = useState('');
-   const PushDataInput = (id: string) => {
-     setName(item.name);
-    
+  const [atualizacion, setAtualizacion] = useState(false);
+  const SetEditItem = (id: string) =>{
+     setAtualizacion(true)
+   }
 
-     setMatricula(item.matricula);
-
-     console.log(PushDataInput);
-   };
  
-   const ToUpdate = await firestore().collection('Employee').doc(id)
-     const dados={
-       name: name,
-       matricula: matricula
-     }
-    ToUpdate.update({dados})
-     console.log(dados);
-  }
- 
+  
   async function handleRemove(id: string) {
     await firestore().collection('Employee').doc(id).delete();
   }
@@ -76,28 +60,16 @@ const TodoItemList = ({item}: {item: IItem}) => {
           {item.matricula}
         </Text>
         <Box>
-          <TouchableOpacity onPress={() => handleEdit(item.id)}>
+          <TouchableOpacity onPress={() => SetEditItem(item.id)}>
             <Icon name="edit" size={23} color="black" />
           </TouchableOpacity>
-          {item.isDone ? (
-            <CheckCircleIcon
-              size={2}
-              color="#03BB85"
-              onPress={() => handleToggleDone(item.id)}
-            />
-          ) : (
-            <WarningIcon
-              size={2}
-              color="#FF6961"
-              onPress={() => handleTogglePending(item.id)}
-            />
-          )}
+          
         </Box>
         <Box>
           <CloseIcon
             size={3}
             color="#ff0000"
-            onPress={() => handleRemove(item.id)}
+            onPress={() => handleRemove(item.id )}
           />
         </Box>
       </HStack>

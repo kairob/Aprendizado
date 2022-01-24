@@ -1,12 +1,41 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Heading, Input, Spacer, HStack, Button} from 'native-base';
 import firestore from '@react-native-firebase/firestore';
 
-const NewEffective = () => {
+const NewEffective = (props) => {
+const initialValues = {
+  name: '',
+  matricula:''
+}
+const [EditName, setEditName] = useState('')
+const [EditMatricula, setEditMatricula] = useState('');
+
+const [EditData, setEditData] = useState(initialValues);
+
+const [atualizacion, setAtualizacion] = useState(false)
+
+async function getEditData(){
+  if(props.idAtual === ''){
+    setEditData({...initialValues})
+  }else{
+    setEditData({...props.DataEmployee[props.idAtual]})
+  }
+}
+ useEffect(() => {getEditData},[props.idAtual,props.DataEmployee])
+
+
+  /////////////////////
   const [newName, setNewName] = useState('');
    const [newMatricula, setNewMatricula] = useState('');
+  
+  
 
   const handleAddItem = () => {
+    const Editdata ={
+      name : EditName,
+      matricula:EditMatricula
+
+    }
     const newData = {
       name: newName,
       isDone: false,
@@ -14,28 +43,16 @@ const NewEffective = () => {
       matricula: newMatricula
     };
 
-    firestore().collection('Employee').add(newData);
+    firestore().collection('Employee').doc().set(newData || [Editdata]);
     setNewName('');
     setNewMatricula('');
   };
- const [name, setName] = useState('');
- const [matricula, setMatricula] = useState('');
- const [data, setData] = useState('');
- const PushDataInput = (id: string) => {
-   setNome(data.name)
-     item.name;
-   
-   setMatricula:
-     item.matricula;
-   
-   console.log(PushDataInput);
- };
+ 
   return (
     <>
-      <HStack display="flex" >
+      <HStack display="flex">
         <Input
           color="#000000"
-         
           w={{
             base: '60%',
             md: '80%',
@@ -45,7 +62,6 @@ const NewEffective = () => {
         />
         <Input
           color="#000000"
-         
           w={{
             base: '20%',
             md: '80%',
@@ -53,10 +69,15 @@ const NewEffective = () => {
           value={newMatricula}
           onChangeText={setNewMatricula}
         />
-        <Button onPress={PushDataInput()}>Atualizar</Button>
-        <Button mx={1} onPress={handleAddItem}>
-          Salvar
-        </Button>
+        {atualizacion ? (
+          <Button mx={1} >
+            Edit
+          </Button>
+        ) : (
+          <Button mx={1} onPress={handleAddItem}>
+            Salvar
+          </Button>
+        )}
       </HStack>
       <Spacer />
     </>
