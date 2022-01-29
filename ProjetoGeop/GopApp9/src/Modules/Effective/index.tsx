@@ -1,47 +1,57 @@
 import React, {useState, useEffect} from 'react';
 import {IItem} from './Types';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import firestore from '@react-native-firebase/firestore';
 import Icon from 'react-native-vector-icons/AntDesign';
-import {Dialog, Portal} from 'react-native-paper';
-import {Box, VStack, Spacer,HStack, Button,Input} from 'native-base';
+import { FAB,Appbar} from 'react-native-paper';
+import {Box, VStack, Spacer, HStack, Button, Input} from 'native-base';
 import {
   FlatList,
   TouchableOpacity,
-
   Alert,
   Modal,
-  StyleSheet,
+  
   Text,
   Pressable,
   View,
 } from 'react-native';
 import {ListItem} from 'react-native-elements';
-
-import NewEffective from './NewEffective';
-import DetailsEffective from './DetailsEffective';
-
+import styles from './styles'
+//////////////Parametros de Navegação/////////////////////////////////////////////////////
+import {useNavigation} from '@react-navigation/native';
+import {RootStackParamsList} from '../../App';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+type homeScreenProp = NativeStackNavigationProp<
+  RootStackParamsList,
+  'Effective'
+>;
+///////////////////////////////////////////////////////////////////////////////
 const Effective = () => {
+  const navigation = useNavigation<homeScreenProp>();
+
   ////////////EditItem///////////////////////////////////////////////////////////////////////////
-function OpenModal(id : string) {
-  setModalVisible(true);
-   DataEmployee.forEach(item => {
-     if (id === item.id) {
-       setEditName(item.name);
-      setEditMatricula(item.matricula) 
-      }
-   });
-}
-  ////////////////GetItem//////////////////////////////////////////////////////////////////////
-  const [EditName, setEditName] = useState('')
-  const [EditMatricula, setEditMatricula] = useState('')
+  const [EditName, setEditName] = useState('');
+  const [EditMatricula, setEditMatricula] = useState('');
   const [DataEmployee, setDataEmployee] = useState([]);
   const [idAtual, setIdAtual] = useState('');
-   function EditData(id: string) {
-     OpenModal(id)
-     
-       
-   }
 
+  async function EditData(idAtual) {
+    await firestore().collection('Employee').doc(idAtual).update({
+      name: EditName,
+      matricula: EditMatricula,
+    });
+  }
+  function OpenModal(id: string) {
+    setModalVisible(true);
+    DataEmployee.forEach(item => {
+      if (id === item.id) {
+        setIdAtual(item.id);
+        setEditName(item.name);
+        setEditMatricula(item.matricula);
+      }
+    });
+  }
+    ////////////////GetItem//////////////////////////////////////////////////////////////////////
 
   useEffect(() => {
     const Editdata = firestore()
@@ -59,7 +69,7 @@ function OpenModal(id : string) {
             title: data.title,
           };
           EditList.push(todoItem);
-         
+
           console.log(EditList);
         });
         setDataEmployee(EditList);
@@ -67,7 +77,7 @@ function OpenModal(id : string) {
 
     return () => Editdata();
   }, []);
-  
+
   //////////////////Lista//////////////////////////////////////////////////////////////////////
   const [todos, setTodos] = useState<IItem[]>([]);
   useEffect(() => {
@@ -93,32 +103,11 @@ function OpenModal(id : string) {
 
     return () => subscriber();
   }, []);
-  
   /////////////////////
-  const [newName, setNewName] = useState('');
-  const [newMatricula, setNewMatricula] = useState('');
-const [atualizacion, setAtualizacion] = useState(false);
-  const handleAddItem = () => {
-    
-    const newData = {
-      name: newName,
-      isDone: false,
-      createdAt: new Date(),
-      matricula: newMatricula,
-    };
-
-    firestore()
-      .collection('Employee')
-      .doc()
-      .set(newData );
-    setNewName('');
-    setNewMatricula('');
-  };
  
+
   const renderItem = ({item}) => (
-    <ListItem     
-      hasTVPreferredFocus={undefined}
-      tvParallaxProperties={undefined}>
+    <ListItem bottomDivider hasTVPreferredFocus={undefined} tvParallaxProperties={undefined}>
       <ListItem.Content>
         <ListItem.Title>{item.name}</ListItem.Title>
         <ListItem.Subtitle>{item.matricula}</ListItem.Subtitle>
@@ -156,10 +145,14 @@ const [atualizacion, setAtualizacion] = useState(false);
                       value={EditMatricula}
                       onChangeText={setEditMatricula}
                     />
-                    
-                      <Button mx={1} onPress={()=>{EditData}}>Edit</Button>
-                    
-                    
+
+                    <Button
+                      mx={1}
+                      onPress={() => {
+                        EditData(idAtual);
+                      }}>
+                      Edit
+                    </Button>
                   </HStack>
                 </Box>
               </VStack>
@@ -172,111 +165,52 @@ const [atualizacion, setAtualizacion] = useState(false);
           </View>
         </Modal>
         <Pressable>
-          <TouchableOpacity onPress={() =>{OpenModal(item.id)}}>
+          <TouchableOpacity
+            onPress={() => {
+              OpenModal(item.id);
+            }}>
             <Icon name="edit" size={23} color="black" />
           </TouchableOpacity>
         </Pressable>
       </View>
     </ListItem>
   );
-  
-   const [modalVisible, setModalVisible] = useState(false);
+
+  const [modalVisible, setModalVisible] = useState(false);
   return (
     <>
-      <VStack  space={1} alignItems="center" mt={1}>
-        <Spacer />
-       
-        <Box   p={3}>            
-          <HStack display="flex">
-            <Input
-              color="#000000"
-              w={{
-                base: '60%',
-                md: '80%',
-              }}
-              value={newName}
-              onChangeText={setNewName}
-            />
+      <SafeAreaView>
+        <Box bg="info.800">
+          <Appbar.Header style={{backgroundColor: '#0369a1', width: '100%'}}>
+            <Appbar.BackAction onPress={() =>navigation.navigate('Home')}/>
+            <Appbar.Content title="Lista de Empregados"  />
+          </Appbar.Header>
+        </Box>
 
-            <Input
-              color="#000000"
-              w={{
-                base: '20%',
-                md: '80%',
-              }}
-              value={newMatricula}
-              onChangeText={setNewMatricula}
+        <VStack space={1} alignItems="center" mt={1}>
+         
+          <Box
+            pt={1}
+            w={{
+              base: '100%',
+              md: '25%',
+            }}>
+            <FlatList
+              data={todos}
+              renderItem={renderItem}
+              keyExtractor={item => item.id}
             />
-            {atualizacion ? (
-              <Button mx={1}>Edit</Button>
-            ) : (
-              <Button mx={1} onPress={handleAddItem}>
-                Salvar
-              </Button>
-            )}
-          </HStack>
-        </Box>
-        
-        <Box
-          pt={1}
-          w={{
-            base: '100%',
-            md: '25%',
-          }}>
-          <FlatList
-            data={todos}
-            renderItem={renderItem}
-            keyExtractor={item => item.id}
-          />
-        </Box>
-      </VStack>
+          </Box>
+        </VStack>
+      </SafeAreaView>
+      <FAB
+        style={styles.fab}
+        small
+        icon="plus"
+        onPress={() => navigation.navigate('NewEffective')}
+      />
     </>
   );
 };
 export default Effective;
-const styles = StyleSheet.create({
-  centeredView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 5,
-  },
-  modalView: {
-    margin: 10,
-    height:550,
-    width:350,
-    backgroundColor: 'white',
-    borderRadius: 20,
-    padding: 50,
-    
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 3,
-  },
-  button: {
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2,
-  },
-  buttonOpen: {
-    backgroundColor: '#F194FF',
-  },
-  buttonClose: {
-    backgroundColor: '#2196F3',
-  },
-  textStyle: {
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: 'center',
-  },
-});
+

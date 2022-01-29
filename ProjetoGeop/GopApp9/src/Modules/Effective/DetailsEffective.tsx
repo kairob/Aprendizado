@@ -22,9 +22,9 @@ const TodoItemList = ({item}: {item: IItem}) => {
 
  
   
-  async function handleRemove(id: string) {
-    await firestore().collection('Employee').doc(id).delete();
-  }
+    async function handleRemove(id: string) {
+      await firestore().collection('Employee').doc(id).delete();
+    }
 
   async function handleToggleDone(id: string) {
     await firestore().collection('Employee').doc(id).update({

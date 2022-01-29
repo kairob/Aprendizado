@@ -2,6 +2,9 @@
 
 import React from 'react';
 import {StyleSheet} from 'react-native';
+
+import {Dialog, Portal, FAB, Appbar} from 'react-native-paper';
+
 import Icon from 'react-native-vector-icons/AntDesign';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -45,7 +48,7 @@ export default function App() {
     <SafeAreaProvider>
       <NativeBaseProvider>
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="Effective">
+          <Stack.Navigator initialRouteName="Home">
             <Stack.Screen
               options={{headerShown: false}}
               name="Home"
@@ -57,9 +60,11 @@ export default function App() {
               component={BottonsIcon}
             />
             <Stack.Screen
-              options={{headerShown: false}}
               name="Effective"
               component={Effective}
+              options={{
+                headerShown: false,
+              }}
             />
             <Stack.Screen
               options={{headerShown: false}}
@@ -75,13 +80,7 @@ export default function App() {
               name="NewEffective"
               component={NewEffective}
               options={{
-                title: 'Incluir Efeftivo ',
-                headerStyle: {
-                  backgroundColor: '#0369a1',
-                },
-                headerTitleStyle: {
-                  color: 'black',
-                },
+                headerShown: false,
               }}
             />
           </Stack.Navigator>

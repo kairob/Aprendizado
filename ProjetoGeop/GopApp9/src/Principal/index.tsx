@@ -18,8 +18,8 @@ export default function Principal() {
   const containerStyle = {backgroundColor: 'white', padding: 20, height: 400};
   return (
     <SafeAreaView style={{flex: 1, width: '100%'}}>
+      <StatusBar backgroundColor="#0369a1" barStyle="light-content" />
       <Center p={4} flex={1} px={3} bg="info.700">
-        <StatusBar backgroundColor="#0369a1" barStyle="light-content" />
         <VStack space={2}>
           <Center w="340" flex={0.25} justifyContent="flex-end">
             <Heading textAlign="center" mb="10" color="white">
@@ -38,10 +38,8 @@ export default function Principal() {
               style={{
                 marginTop: 1,
                 position: 'absolute',
-                
               }}>
               <Icon name="down" size={13} color="white" />
-              
             </TouchableOpacity>
           </Center>
           <Center w="340" flex={0.55} />
