@@ -5,7 +5,7 @@ import firestore from '@react-native-firebase/firestore';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { FAB,Appbar} from 'react-native-paper';
 import {Box, VStack, Spacer, HStack, Button, Input} from 'native-base';
-import {
+import { 
   FlatList,
   TouchableOpacity,
   Alert,
@@ -17,6 +17,7 @@ import {
 } from 'react-native';
 import {ListItem} from 'react-native-elements';
 import styles from './styles'
+import FabGroup from './FabGroup'
 //////////////Parametros de Navegação/////////////////////////////////////////////////////
 import {useNavigation} from '@react-navigation/native';
 import {RootStackParamsList} from '../../App';
@@ -182,13 +183,15 @@ const Effective = () => {
       <SafeAreaView>
         <Box bg="info.800">
           <Appbar.Header style={{backgroundColor: '#0369a1', width: '100%'}}>
-            <Appbar.BackAction onPress={() =>navigation.navigate('Home')}/>
-            <Appbar.Content title="Lista de Empregados"  />
+            <Appbar.BackAction onPress={() => navigation.navigate('Home')} />
+            <Appbar.Content title="Lista de Empregados" />
           </Appbar.Header>
         </Box>
 
-        <VStack space={1} alignItems="center" mt={1}>
-         
+        <VStack
+          style={{backgroundColor: 'white'}}
+          alignItems="center"
+          mt={1}>
           <Box
             pt={1}
             w={{

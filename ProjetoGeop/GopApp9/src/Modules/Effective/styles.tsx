@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     margin: 16,
     right: 15,
     bottom: 15,
-    backgroundColor: 'red',
+    backgroundColor: '#0369a1',
   },
   centeredView: {
     flex: 1,
