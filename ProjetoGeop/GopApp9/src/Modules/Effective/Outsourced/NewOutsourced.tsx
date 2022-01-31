@@ -1,11 +1,11 @@
 import React from 'react';
-import {Input, VStack, FormControl, Box, HStack} from 'native-base';
+import {VStack, FormControl, Box, HStack} from 'native-base';
 import {Button, Appbar, TextInput} from 'react-native-paper';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import firestore from '@react-native-firebase/firestore';
 //////////////Parametros de Navegação/////////////////////////////////////////////////////
 import {useNavigation} from '@react-navigation/native';
-import {RootStackParamsList} from '../../App';
+import {RootStackParamsList} from '../../../App';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 type homeScreenProp = NativeStackNavigationProp<
   RootStackParamsList,
@@ -17,10 +17,12 @@ const NewEffective = () => {
   interface ForData {
     name: string;
     matricula: string;
+    placa: string;
   }
   const initialValues = {
     name: '',
     matricula: '',
+    placa: '',
   };
   const [formData, setData] = React.useState<ForData>(initialValues);
   const [errors, setErrors] = React.useState({});
@@ -43,17 +45,17 @@ const NewEffective = () => {
     return true;
   };
   const Return = () => {
-    return navigation.navigate('Effective');
+    return navigation.navigate('OutsourcedEmployee');
   };
   const handleAddItem = () => {
     const newData = {
       name: formData.name,
-      isDone: false,
+      placa: formData.placa,
       createdAt: new Date(),
       matricula: formData.matricula,
     };
 
-    firestore().collection('Employee').doc().set(newData);
+    firestore().collection('Outsourced').doc().set(newData);
     Return();
   };
   const onSubmit = () => {
@@ -71,20 +73,22 @@ const NewEffective = () => {
               justifyContent: 'center',
             }}>
             <Appbar.BackAction
-              onPress={() => navigation.navigate('Effective')}
+              onPress={() => navigation.navigate('OutsourcedEmployee')}
             />
-            <Appbar.Content title="Cadastro de Empregados" />
+            <Appbar.Content
+              title="Cadastro de Empregados"
+              subtitle="Parceiros"
+            />
           </Appbar.Header>
         </Box>
         <HStack
-          bg="info.100"
           style={{
             width: '100%',
             alignItems: 'center',
             justifyContent: 'center',
             height: '100%',
           }}>
-          <VStack position="relative" w="300px" mx="3" maxW="400px">
+          <VStack  mx="3" >
             <FormControl isRequired isInvalid={'name' in errors}>
               <TextInput
                 mode="outlined"
@@ -114,6 +118,22 @@ const NewEffective = () => {
               ) : (
                 <FormControl.HelperText>
                   A matricula deve conter 10 caracteres.
+                </FormControl.HelperText>
+              )}
+            </FormControl>
+            <FormControl isRequired isInvalid={'placa' in errors}>
+              <TextInput
+                mode="outlined"
+                label="Placa"
+                onChangeText={value => setData({...formData, placa: value})}
+              />
+              {'placa' in errors ? (
+                <FormControl.ErrorMessage>
+                  Inserir placa
+                </FormControl.ErrorMessage>
+              ) : (
+                <FormControl.HelperText>
+                  A placa deve conter 7 caracteres.
                 </FormControl.HelperText>
               )}
             </FormControl>

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {IItem} from './Types';
+import {IItem} from '../Types';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import firestore from '@react-native-firebase/firestore';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -10,17 +10,17 @@ import {
   TouchableOpacity,
   Alert,
   Modal,
-  
   Text,
   Pressable,
   View,
+  StyleSheet
 } from 'react-native';
 import {ListItem} from 'react-native-elements';
-import styles from './styles'
-import FabGroup from './FabGroup'
+import styles from '../styles'
+import FabGroup from '../FabGroup'
 //////////////Parametros de Navegação/////////////////////////////////////////////////////
 import {useNavigation} from '@react-navigation/native';
-import {RootStackParamsList} from '../../App';
+import {RootStackParamsList} from '../../../App';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 type homeScreenProp = NativeStackNavigationProp<
   RootStackParamsList,
@@ -29,18 +29,23 @@ type homeScreenProp = NativeStackNavigationProp<
 ///////////////////////////////////////////////////////////////////////////////
 const Effective = () => {
   const navigation = useNavigation<homeScreenProp>();
-
+  ////////////////Detatlhes Efetivo//////////////////////////////////////////////////////////////
+  
   ////////////EditItem///////////////////////////////////////////////////////////////////////////
   const [EditName, setEditName] = useState('');
   const [EditMatricula, setEditMatricula] = useState('');
   const [DataEmployee, setDataEmployee] = useState([]);
   const [idAtual, setIdAtual] = useState('');
-
+  ////////////////GetItem//////////////////////////////////////////////////////////////////////
+  const CloseModal = () => {
+    setModalVisible(!modalVisible);
+  };
   async function EditData(idAtual) {
     await firestore().collection('Employee').doc(idAtual).update({
       name: EditName,
       matricula: EditMatricula,
     });
+    CloseModal();
   }
   function OpenModal(id: string) {
     setModalVisible(true);
@@ -52,7 +57,6 @@ const Effective = () => {
       }
     });
   }
-    ////////////////GetItem//////////////////////////////////////////////////////////////////////
 
   useEffect(() => {
     const Editdata = firestore()
@@ -104,77 +108,84 @@ const Effective = () => {
 
     return () => subscriber();
   }, []);
-  /////////////////////
- 
 
   const renderItem = ({item}) => (
-    <ListItem bottomDivider hasTVPreferredFocus={undefined} tvParallaxProperties={undefined}>
-      <ListItem.Content>
-        <ListItem.Title>{item.name}</ListItem.Title>
-        <ListItem.Subtitle>{item.matricula}</ListItem.Subtitle>
-      </ListItem.Content>
-
-      <View style={styles.centeredView}>
-        <Modal
-          transparent={true}
-          visible={modalVisible}
-          onRequestClose={() => {
-            Alert.alert('Modal has been closed.');
-            setModalVisible(!modalVisible);
-          }}>
-          <View style={styles.centeredView}>
-            <View style={styles.modalView}>
-              <VStack>
-                <Box p={3}>
-                  <HStack display="flex">
-                    <Input
-                      color="#000000"
-                      w={{
-                        base: '60%',
-                        md: '80%',
-                      }}
-                      value={EditName}
-                      onChangeText={setEditName}
-                    />
-
-                    <Input
-                      color="#000000"
-                      w={{
-                        base: '20%',
-                        md: '80%',
-                      }}
-                      value={EditMatricula}
-                      onChangeText={setEditMatricula}
-                    />
-
-                    <Button
-                      mx={1}
-                      onPress={() => {
-                        EditData(idAtual);
-                      }}>
-                      Edit
-                    </Button>
-                  </HStack>
-                </Box>
-              </VStack>
-              <Pressable
-                style={[styles.button, styles.buttonClose]}
-                onPress={() => setModalVisible(!modalVisible)}>
-                <Text style={styles.textStyle}>Hide Modal</Text>
+    <TouchableOpacity>
+      <ListItem
+        bottomDivider
+        hasTVPreferredFocus={undefined}
+        tvParallaxProperties={undefined}>
+        <ListItem.Content>
+          <ListItem.Title>{item.name}</ListItem.Title>
+          <ListItem.Subtitle>{item.matricula}</ListItem.Subtitle>
+        </ListItem.Content>
+        <ListItem.Content right>
+          <ListItem.Title right style={{color: 'green'}}>
+            11:00 am
+          </ListItem.Title>
+          <ListItem.Subtitle right>
+            <View style={styles.centeredView}>
+              <Modal
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => {
+                  Alert.alert('Modal has been closed.');
+                  setModalVisible(!modalVisible);
+                }}>
+                <View style={styles.centeredView}>
+                  <View style={styles.modalView}>
+                    <Pressable
+                      style={[styles.button, styles.buttonClose]}
+                      onPress={() => setModalVisible(!modalVisible)}>
+                      <Icon name="close" size={15} color="white" />
+                    </Pressable>
+                    <VStack>
+                      <Box p={3}>
+                        <HStack display="flex">
+                          <Input
+                            color="#000000"
+                            w={{
+                              base: '60%',
+                              md: '80%',
+                            }}
+                            value={EditName}
+                            onChangeText={setEditName}
+                          />
+                          <Input
+                            color="#000000"
+                            w={{
+                              base: '20%',
+                              md: '80%',
+                            }}
+                            value={EditMatricula}
+                            onChangeText={setEditMatricula}
+                          />
+                          <Button
+                            mx={1}
+                            onPress={() => {
+                              EditData(idAtual);
+                            }}>
+                            Edit
+                          </Button>
+                        </HStack>
+                      </Box>
+                    </VStack>
+                  </View>
+                </View>
+              </Modal>
+              <Pressable>
+                <TouchableOpacity
+                  onPress={() => {
+                    OpenModal(item.id);
+                  }}>
+                  <Icon name="edit" size={23} color="black" />
+                </TouchableOpacity>
               </Pressable>
             </View>
-          </View>
-        </Modal>
-        <Pressable>
-          <TouchableOpacity
-            onPress={() => {
-              OpenModal(item.id);
-            }}>
-            <Icon name="edit" size={23} color="black" />
-          </TouchableOpacity>
-        </Pressable>
-      </View>
-    </ListItem>
+          </ListItem.Subtitle>
+        </ListItem.Content>
+      </ListItem>
+    </TouchableOpacity>
   );
 
   const [modalVisible, setModalVisible] = useState(false);
@@ -187,11 +198,8 @@ const Effective = () => {
             <Appbar.Content title="Lista de Empregados" />
           </Appbar.Header>
         </Box>
-
-        <VStack
-          style={{backgroundColor: 'white'}}
-          alignItems="center"
-          mt={1}>
+        <Spacer bg="light.50" />
+        <VStack style={{backgroundColor: 'white'}} alignItems="center" mt={1}>
           <Box
             pt={1}
             w={{
@@ -206,12 +214,13 @@ const Effective = () => {
           </Box>
         </VStack>
       </SafeAreaView>
-      <FAB
+    {/*  <FAB
         style={styles.fab}
         small
         icon="plus"
         onPress={() => navigation.navigate('NewEffective')}
-      />
+    />*/}
+      <FabGroup style={{bottom:80,right:80}} />
     </>
   );
 };

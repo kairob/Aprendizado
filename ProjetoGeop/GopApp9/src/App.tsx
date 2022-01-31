@@ -2,20 +2,18 @@
 
 import React from 'react';
 import {StyleSheet} from 'react-native';
-
-import {Dialog, Portal, FAB, Appbar} from 'react-native-paper';
-
-import Icon from 'react-native-vector-icons/AntDesign';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Principal from './Principal';
 import BottonsIcon from './Principal';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import DashboardPanel from './Modules/DashboardPanel';
-import Effective from './Modules/Effective';
-import DetailsEffective from './Modules/Effective/DetailsEffective';
-
-import NewEffective from './Modules/Effective/NewEffective';
+import Effective from './Modules/Effective/Own';
+import DetailsEffective from './Modules/Effective/Own/DetailsEffective';
+import FabGroup from './Modules/Effective/FabGroup';
+import NewEffective from './Modules/Effective/Own/NewEffective';
+import OutsourcedEmployee from './Modules/Effective/Outsourced';
+import NewOutsourced from './Modules/Effective/Outsourced/NewOutsourced';
 //import BottonFooter from './BodyGlobal/BottonFooter';
 //import Sector from './pages/Group/Sector';
 //import Peoples from './pages/Peoples';
@@ -39,8 +37,10 @@ export type RootStackParamsList = {
   DashboardPanel: undefined;
   Effective: undefined;
   DetailsEffective: undefined;
-
+  FabGroup: undefined;
   NewEffective: undefined;
+  OutsourcedEmployee: undefined;
+  NewOutsourced: undefined;
 };
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -48,7 +48,7 @@ export default function App() {
     <SafeAreaProvider>
       <NativeBaseProvider>
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="Home">
+          <Stack.Navigator initialRouteName="OutsourcedEmployee">
             <Stack.Screen
               options={{headerShown: false}}
               name="Home"
@@ -79,6 +79,27 @@ export default function App() {
             <Stack.Screen
               name="NewEffective"
               component={NewEffective}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="FabGroup"
+              component={FabGroup}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="OutsourcedEmployee"
+              component={OutsourcedEmployee}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="NewOutsourced"
+              component={NewOutsourced}
               options={{
                 headerShown: false,
               }}

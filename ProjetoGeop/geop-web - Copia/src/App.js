@@ -1,13 +1,13 @@
 import "./App.css";
 import React from "react";
-import Register from './Register'
+//import Register from './Register'
 
 
 function App() {
   return (
     <div>
       <div className="container">
-        <Register/>
+        <div>teste</div>
       </div>
     </div>
   );
